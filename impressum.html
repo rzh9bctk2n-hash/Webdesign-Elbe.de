@@ -1,1 +1,682 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Impressum | Webdesign-Elbe</title>
+  <meta name="description" content="Impressum von Webdesign-Elbe." />
+
+  <style>
+    :root {
+      --navy: #062e56;
+      --navy-2: #041f3d;
+      --teal: #1c8587;
+      --teal-soft: #dff4f3;
+      --blue: #58aede;
+      --sky: #eaf7ff;
+      --white: #ffffff;
+      --text: #17324a;
+      --muted: #61758a;
+      --line: rgba(6, 46, 86, 0.12);
+      --shadow: 0 22px 60px rgba(4, 31, 61, 0.16);
+      --radius-xl: 32px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(88, 174, 222, 0.24), transparent 28%),
+        radial-gradient(circle at 90% 20%, rgba(28, 133, 135, 0.18), transparent 24%),
+        linear-gradient(180deg, #f8fcff 0%, #ffffff 38%, #f5fbff 100%);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page-shell {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 14px 0;
+      background: rgba(248, 252, 255, 0.58);
+      backdrop-filter: blur(22px);
+      border-bottom: 1px solid rgba(6, 46, 86, 0.06);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 10px 12px 10px 14px;
+      border: 1px solid rgba(6, 46, 86, 0.1);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 18px 50px rgba(4, 31, 61, 0.1);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: max-content;
+    }
+
+    .brand-mark {
+      width: 70px;
+      height: 70px;
+      flex: 0 0 70px;
+      border-radius: 22px;
+      background: #ffffff;
+      border: 1px solid rgba(6, 46, 86, 0.12);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 28px rgba(4, 31, 61, 0.10);
+      overflow: hidden;
+      padding: 4px;
+    }
+
+    .brand-mark img {
+  width: 72px;
+  height: 72px;
+  max-width: none;
+  object-fit: contain;
+  transform: scale(1.02) translateX(-4px) translateY(-3px);
+  transform-origin: center;
+}
+
+    .brand-name {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      color: var(--navy);
+      line-height: 1.05;
+    }
+
+    .brand-name span {
+      color: var(--teal);
+    }
+
+    .brand-subline {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(234, 247, 255, 0.76);
+      border: 1px solid rgba(6, 46, 86, 0.06);
+      font-size: 14px;
+      font-weight: 800;
+      color: rgba(23, 50, 74, 0.76);
+    }
+
+    .nav-links a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--navy);
+      background: white;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(4, 31, 61, 0.08);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      color: white;
+      box-shadow: 0 16px 30px rgba(6, 46, 86, 0.24);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--navy);
+      box-shadow: 0 12px 30px rgba(6, 46, 86, 0.12);
+      border: 1px solid var(--line);
+    }
+
+    .legal-hero {
+      position: relative;
+      padding: 82px 0 48px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #f8fcff 0%, #ffffff 72%);
+    }
+
+    .legal-hero::before {
+      content: "";
+      position: absolute;
+      right: -220px;
+      top: -260px;
+      width: 680px;
+      height: 680px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(88,174,222,0.22), transparent 64%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--teal);
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(6, 46, 86, 0.1);
+      box-shadow: 0 10px 28px rgba(4,31,61,0.06);
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--teal);
+      box-shadow: 0 0 0 5px rgba(28,133,135,0.12);
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: 0.94;
+      letter-spacing: -0.075em;
+      color: var(--navy-2);
+      margin-bottom: 24px;
+      max-width: 760px;
+    }
+
+    .hero-copy {
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .legal-section {
+      padding: 36px 0 100px;
+    }
+
+    .legal-layout {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .side-card,
+    .content-card {
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 18px 45px rgba(4, 31, 61, 0.08);
+    }
+
+    .side-card {
+      padding: 26px;
+      position: sticky;
+      top: 120px;
+    }
+
+    .side-card h2 {
+      color: var(--navy);
+      font-size: 22px;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin-bottom: 12px;
+    }
+
+    .side-card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .side-links {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .side-links a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(234, 247, 255, 0.75);
+      color: var(--navy);
+      font-weight: 850;
+      font-size: 14px;
+      border: 1px solid rgba(6, 46, 86, 0.06);
+    }
+
+    .side-links a:hover {
+      background: white;
+      box-shadow: 0 10px 24px rgba(4, 31, 61, 0.08);
+    }
+
+    .content-card {
+      padding: 34px;
+    }
+
+    .content-block {
+      padding: 0 0 28px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid rgba(6, 46, 86, 0.1);
+    }
+
+    .content-block:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .content-block h2 {
+      color: var(--navy-2);
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    .content-block h3 {
+      color: var(--navy);
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin: 24px 0 8px;
+    }
+
+    .content-block p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.72;
+      margin-bottom: 12px;
+    }
+
+    .info-box {
+      padding: 20px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(234, 247, 255, 0.9), rgba(223, 244, 243, 0.72));
+      border: 1px solid rgba(6, 46, 86, 0.09);
+      margin: 18px 0;
+    }
+
+    .info-box strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .legal-list {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      margin: 14px 0;
+    }
+
+    .legal-list li {
+      display: flex;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .legal-list li::before {
+      content: "✓";
+      color: var(--teal);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .placeholder {
+      color: var(--navy);
+      font-weight: 850;
+      background: rgba(28, 133, 135, 0.08);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+
+    .footer {
+      background: var(--navy-2);
+      color: rgba(255,255,255,0.82);
+      padding: 40px 0;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer strong {
+      color: white;
+      font-size: 18px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 960px) {
+      .nav-links {
+        display: none;
+      }
+
+      .legal-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-card {
+        position: static;
+      }
+    }
+
+   @media (max-width: 680px) {
+  .page-shell {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .legal-hero {
+    padding-top: 50px;
+  }
+
+  .nav {
+    gap: 10px;
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  .brand {
+    min-width: 0;
+    gap: 10px;
+  }
+
+  .brand-name {
+    font-size: 17px;
+    line-height: 1;
+  }
+
+  .brand-subline {
+    font-size: 10px;
+    line-height: 1.15;
+  }
+
+  .brand-mark {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    border-radius: 16px;
+  }
+
+  .brand-mark img {
+    width: 54px;
+    height: 54px;
+    transform: scale(1.02) translateX(-3px) translateY(-2px);
+  }
+
+  .nav > .btn {
+    width: auto;
+    flex: 0 0 auto;
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+
+  .content-card,
+  .side-card {
+    padding: 24px;
+  }
+
+  .footer-grid {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="page-shell nav">
+      <a href="./index.html#start" class="brand" aria-label="Webdesign-Elbe Startseite">
+        <div class="brand-mark">
+          <img src="./Assets/Logo-Header.png" alt="Webdesign-Elbe Logo" />
+        </div>
+        <div>
+          <div class="brand-name">Webdesign-<span>Elbe</span></div>
+          <div class="brand-subline">Moderne Websites für KMU</div>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="./index.html#leistungen">Leistungen</a>
+        <a href="./index.html#referenzen">Referenzen</a>
+        <a href="./index.html#preise">Pakete</a>
+        <a href="./index.html#wartung">Wartung</a>
+        <a href="./index.html#ablauf">Ablauf</a>
+      </nav>
+
+      <a href="./index.html#anfrage" class="btn btn-primary">Projekt anfragen</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal-hero">
+      <div class="page-shell">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> Rechtliche Angaben</div>
+        <h1>Impressum</h1>
+        <p class="hero-copy">
+          Anbieterkennzeichnung und rechtliche Pflichtangaben für Webdesign-Elbe.
+        </p>
+      </div>
+    </section>
+
+    <section class="legal-section">
+      <div class="page-shell legal-layout">
+
+        <aside class="side-card">
+          <h2>Übersicht</h2>
+          <p>Die wichtigsten rechtlichen Angaben auf einen Blick.</p>
+
+          <ul class="side-links">
+            <li><a href="#anbieter">Anbieter <span>→</span></a></li>
+            <li><a href="#kontakt">Kontakt <span>→</span></a></li>
+            <li><a href="#umsatzsteuer">Umsatzsteuer <span>→</span></a></li>
+            <li><a href="#verantwortlich">Verantwortlich <span>→</span></a></li>
+            <li><a href="#haftung">Haftung <span>→</span></a></li>
+            <li><a href="#urheberrecht">Urheberrecht <span>→</span></a></li>
+          </ul>
+        </aside>
+
+        <article class="content-card">
+
+          <div id="anbieter" class="content-block">
+            <h2>Angaben gemäß § 5 DDG</h2>
+
+            <div class="info-box">
+              <strong>Webdesign-Elbe</strong>
+              <p>
+                <span class="placeholder">Vorname Nachname</span><br />
+                <span class="placeholder">Straße Hausnummer</span><br />
+                <span class="placeholder">PLZ Ort</span><br />
+                Deutschland
+              </p>
+            </div>
+
+            <p>
+              Bitte ersetze die Platzhalter durch deine vollständigen Angaben.
+              Wichtig ist eine ladungsfähige Anschrift, also keine reine Postfachadresse.
+            </p>
+          </div>
+
+          <div id="kontakt" class="content-block">
+            <h2>Kontakt</h2>
+
+            <ul class="legal-list">
+              <li>Telefon: <span class="placeholder">Telefonnummer einfügen</span></li>
+              <li>E-Mail: <span class="placeholder">kontakt@webdesign-elbe.de</span></li>
+            </ul>
+
+            <p>
+              Wenn du keine private Telefonnummer veröffentlichen möchtest, kannst du später eine geschäftliche Nummer nutzen.
+              Eine schnelle elektronische Kontaktaufnahme, insbesondere per E-Mail, sollte aber möglich sein.
+            </p>
+          </div>
+
+          <div id="umsatzsteuer" class="content-block">
+            <h2>Umsatzsteuer</h2>
+
+            <h3>Variante für Kleinunternehmer</h3>
+            <p>
+              Als Kleinunternehmer im Sinne von § 19 UStG wird keine Umsatzsteuer berechnet.
+            </p>
+
+            <h3>Alternative bei vorhandener Umsatzsteuer-ID</h3>
+            <p>
+              Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:
+              <span class="placeholder">DE123456789</span>
+            </p>
+
+            <div class="info-box">
+              <strong>Wichtig</strong>
+              <p>
+                Verwende nur die Variante, die tatsächlich auf dich zutrifft.
+                Die normale private Steuernummer gehört in der Regel nicht ins Impressum.
+              </p>
+            </div>
+          </div>
+
+          <div id="verantwortlich" class="content-block">
+            <h2>Verantwortlich für den Inhalt</h2>
+
+            <p>
+              Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:
+            </p>
+
+            <div class="info-box">
+              <strong><span class="placeholder">Vorname Nachname</span></strong>
+              <p>
+                <span class="placeholder">Straße Hausnummer</span><br />
+                <span class="placeholder">PLZ Ort</span><br />
+                Deutschland
+              </p>
+            </div>
+          </div>
+
+          <div id="haftung" class="content-block">
+            <h2>Haftung für Inhalte und Links</h2>
+
+            <h3>Haftung für Inhalte</h3>
+            <p>
+              Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt.
+              Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.
+            </p>
+
+            <h3>Haftung für Links</h3>
+            <p>
+              Diese Website kann Links zu externen Websites Dritter enthalten, auf deren Inhalte kein Einfluss besteht.
+              Für diese fremden Inhalte wird keine Gewähr übernommen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.
+            </p>
+          </div>
+
+          <div id="urheberrecht" class="content-block">
+            <h2>Urheberrecht</h2>
+
+            <p>
+              Die durch den Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem deutschen Urheberrecht.
+              Die Verviältigung, Bearbeitung, Verbreitung oder sonstige Nutzung außerhalb der Grenzen des Urheberrechts bedarf der vorherigen Zustimmung des jeweiligen Rechteinhabers.
+            </p>
+
+            <p>
+              Soweit Inhalte auf dieser Website nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet.
+            </p>
+          </div>
+
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="page-shell footer-grid">
+      <div>
+        <strong>Webdesign-Elbe</strong>
+        <p>Moderne Websites für kleine Unternehmen.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="./index.html#referenzen">Referenzen</a>
+        <a href="./index.html#preise">Pakete</a>
+        <a href="./index.html#wartung">Wartung</a>
+        <a href="./impressum.html">Impressum</a>
+        <a href="./datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
