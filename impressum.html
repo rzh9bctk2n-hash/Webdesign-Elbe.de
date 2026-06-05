@@ -501,29 +501,41 @@
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="page-shell nav">
-      <a href="./index.html#start" class="brand" aria-label="Webdesign-Elbe Startseite">
-        <div class="brand-mark">
-          <img src="./Assets/Logo-Header.png" alt="Webdesign-Elbe Logo" />
-        </div>
-        <div>
-          <div class="brand-name">Webdesign-<span>Elbe</span></div>
-          <div class="brand-subline">Moderne Websites für KMU</div>
-        </div>
-      </a>
+  <!-- ─── TOPBAR ─── -->
+<header class="topbar" id="topbar">
+  <div class="nav-inner">
+    <a href="./index.html" class="brand">
+      <div class="brand-mark">
+        <img src="./assets/logo.png" alt="Webdesign-Elbe Logo" />
+      </div>
+      <div class="brand-text">
+        <div class="brand-name">Webdesign-<em>Elbe</em></div>
+        <div class="brand-sub">Moderne Websites für KMU</div>
+      </div>
+    </a>
 
-      <nav class="nav-links" aria-label="Hauptnavigation">
-        <a href="./index.html#leistungen">Leistungen</a>
-        <a href="./index.html#referenzen">Referenzen</a>
-        <a href="./index.html#preise">Pakete</a>
-        <a href="./index.html#wartung">Wartung</a>
-        <a href="./index.html#ablauf">Ablauf</a>
-      </nav>
+    <nav class="nav-links" id="navLinks">
+      <a href="./index.html">Start</a>
+      <a href="./index.html#leistungen">Leistungen</a>
+      <a href="./index.html#referenzen">Referenzen</a>
+      <a href="./index.html#preise">Pakete & Preise</a>
+      <a href="./index.html#ueber">Über mich</a>
+      <a href="./index.html#kontakt">Kontakt</a>
+    </nav>
 
-      <a href="./index.html#anfrage" class="btn btn-primary">Projekt anfragen</a>
-    </div>
-  </header>
+    <a href="./index.html#kontakt" class="nav-cta">
+      Projekt anfragen
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menü öffnen" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
   <main>
     <section class="legal-hero">
