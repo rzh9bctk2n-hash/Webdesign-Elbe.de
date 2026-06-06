@@ -3,726 +3,344 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Leistungsbeschreibung | Webdesign-Elbe</title>
   <meta name="description" content="Leistungsbeschreibung der Website-Pakete von Webdesign-Elbe." />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --navy: #062e56;
-      --navy-2: #041f3d;
-      --teal: #1c8587;
-      --teal-soft: #dff4f3;
-      --blue: #58aede;
-      --sky: #eaf7ff;
-      --white: #ffffff;
-      --text: #17324a;
-      --muted: #61758a;
-      --line: rgba(6, 46, 86, 0.12);
-      --shadow: 0 22px 60px rgba(4, 31, 61, 0.16);
-      --radius-lg: 22px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 10% 10%, rgba(88, 174, 222, 0.24), transparent 28%),
-        radial-gradient(circle at 90% 20%, rgba(28, 133, 135, 0.18), transparent 24%),
-        linear-gradient(180deg, #f8fcff 0%, #ffffff 38%, #f5fbff 100%);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .page-shell {
-      width: min(1180px, calc(100% - 36px));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      padding: 14px 0;
-      background: rgba(248, 252, 255, 0.58);
-      backdrop-filter: blur(22px);
-      border-bottom: 1px solid rgba(6, 46, 86, 0.06);
-    }
-
-    .nav {
-      min-height: 74px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-      padding: 10px 12px 10px 14px;
-      border: 1px solid rgba(6, 46, 86, 0.1);
-      border-radius: 28px;
-      background: rgba(255, 255, 255, 0.82);
-      box-shadow: 0 18px 50px rgba(4, 31, 61, 0.1);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      min-width: max-content;
-    }
-
-    .brand-mark {
-      width: 70px;
-      height: 70px;
-      flex: 0 0 70px;
-      border-radius: 22px;
-      background: #ffffff;
-      border: 1px solid rgba(6, 46, 86, 0.12);
-      display: grid;
-      place-items: center;
-      box-shadow: 0 12px 28px rgba(4, 31, 61, 0.10);
-      overflow: hidden;
-      padding: 4px;
-    }
-
-    .brand-mark img {
-  width: 72px;
-  height: 72px;
-  max-width: none;
-  object-fit: contain;
-  transform: scale(1.02) translateX(-4px) translateY(-3px);
-  transform-origin: center;
-}
-
-    .brand-name {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: -0.045em;
-      color: var(--navy);
-      line-height: 1.05;
-    }
-
-    .brand-name span {
-      color: var(--teal);
-    }
-
-    .brand-subline {
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 700;
-      letter-spacing: 0.01em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 6px;
-      border-radius: 999px;
-      background: rgba(234, 247, 255, 0.76);
-      border: 1px solid rgba(6, 46, 86, 0.06);
-      font-size: 14px;
-      font-weight: 800;
-      color: rgba(23, 50, 74, 0.76);
-    }
-
-    .nav-links a {
-      padding: 10px 13px;
-      border-radius: 999px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      padding: 13px 20px;
-      font-weight: 800;
-      font-size: 15px;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--navy), var(--teal));
-      color: white;
-      box-shadow: 0 16px 30px rgba(6, 46, 86, 0.24);
-    }
-
-    .legal-hero {
-      position: relative;
-      padding: 82px 0 48px;
-      overflow: hidden;
-      background: linear-gradient(180deg, #f8fcff 0%, #ffffff 72%);
-    }
-
-    .legal-hero::before {
-      content: "";
-      position: absolute;
-      right: -220px;
-      top: -260px;
-      width: 680px;
-      height: 680px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(88,174,222,0.22), transparent 64%);
-      pointer-events: none;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 8px 13px;
-      border-radius: 999px;
-      background: #ffffff;
-      color: var(--teal);
-      font-weight: 900;
-      font-size: 13px;
-      margin-bottom: 24px;
-      border: 1px solid rgba(6, 46, 86, 0.1);
-      box-shadow: 0 10px 28px rgba(4,31,61,0.06);
-    }
-
-    .eyebrow-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--teal);
-      box-shadow: 0 0 0 5px rgba(28,133,135,0.12);
-    }
-
-    h1 {
-      font-size: clamp(44px, 6vw, 76px);
-      line-height: 0.94;
-      letter-spacing: -0.075em;
-      color: var(--navy-2);
-      margin-bottom: 24px;
-      max-width: 860px;
-    }
-
-    .hero-copy {
-      font-size: 18px;
-      line-height: 1.65;
-      color: var(--muted);
-      max-width: 760px;
-    }
-
-    .legal-section {
-      padding: 36px 0 100px;
-    }
-
-    .legal-layout {
-      display: grid;
-      grid-template-columns: 0.72fr 1.28fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .side-card,
-    .content-card {
-      background: rgba(255,255,255,0.88);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      box-shadow: 0 18px 45px rgba(4, 31, 61, 0.08);
-    }
-
-    .side-card {
-      padding: 26px;
-      position: sticky;
-      top: 120px;
-    }
-
-    .side-card h2 {
-      color: var(--navy);
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    .side-card p {
-      color: var(--muted);
-      font-size: 15px;
-      margin-bottom: 20px;
-    }
-
-    .side-links {
-      display: grid;
-      gap: 10px;
-      list-style: none;
-    }
-
-    .side-links a {
-      display: flex;
-      justify-content: space-between;
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(234, 247, 255, 0.75);
-      color: var(--navy);
-      font-weight: 850;
-      font-size: 14px;
-      border: 1px solid rgba(6, 46, 86, 0.06);
-    }
-
-    .content-card {
-      padding: 34px;
-    }
-
-    .content-block {
-      padding: 0 0 28px;
-      margin-bottom: 28px;
-      border-bottom: 1px solid rgba(6, 46, 86, 0.1);
-    }
-
-    .content-block:last-child {
-      border-bottom: 0;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .content-block h2 {
-      color: var(--navy-2);
-      font-size: clamp(26px, 3vw, 36px);
-      line-height: 1.05;
-      letter-spacing: -0.045em;
-      margin-bottom: 16px;
-    }
-
-    .content-block h3 {
-      color: var(--navy);
-      font-size: 20px;
-      margin: 22px 0 8px;
-    }
-
-    .content-block p,
-    .content-block li {
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.72;
-      margin-bottom: 10px;
-    }
-
-    .legal-list {
-      list-style: none;
-      display: grid;
-      gap: 9px;
-      margin: 14px 0;
-    }
-
-    .legal-list li {
-      display: flex;
-      gap: 10px;
-    }
-
-    .legal-list li::before {
-      content: "✓";
-      color: var(--teal);
-      font-weight: 900;
-      flex: 0 0 auto;
-    }
-
-    .info-box {
-      padding: 20px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(234, 247, 255, 0.9), rgba(223, 244, 243, 0.72));
-      border: 1px solid rgba(6, 46, 86, 0.09);
-      margin: 18px 0;
-    }
-
-    .footer {
-      background: var(--navy-2);
-      color: rgba(255,255,255,0.82);
-      padding: 40px 0;
-    }
-
-    .footer-grid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .footer strong {
-      color: white;
-      font-size: 18px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      font-size: 14px;
-      font-weight: 700;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 960px) {
-      .nav-links {
-        display: none;
-      }
-
-      .legal-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .side-card {
-        position: static;
-      }
-    }
-
-    @media (max-width: 680px) {
-  .page-shell {
-    width: min(100% - 24px, 1180px);
-  }
-
-  .legal-hero {
-    padding-top: 50px;
-  }
-
-  .nav {
-    gap: 10px;
-    padding: 10px;
-    overflow: hidden;
-  }
-
-  .brand {
-    min-width: 0;
-    gap: 10px;
-  }
-
-  .brand-name {
-    font-size: 17px;
-    line-height: 1;
-  }
-
-  .brand-subline {
-    font-size: 10px;
-    line-height: 1.15;
-  }
-
-  .brand-mark {
-    width: 52px;
-    height: 52px;
-    flex: 0 0 52px;
-    border-radius: 16px;
-  }
-
-  .brand-mark img {
-    width: 54px;
-    height: 54px;
-    transform: scale(1.02) translateX(-3px) translateY(-2px);
-  }
-
-  .nav > .btn {
-    width: auto;
-    flex: 0 0 auto;
-    padding: 11px 14px;
-    font-size: 13px;
-  }
-
-  .content-card,
-  .side-card {
-    padding: 24px;
-  }
-
-  .footer-grid {
-    align-items: stretch;
-    flex-direction: column;
-  }
-}
+    :root{--navy:#062e56;--navy-2:#041f3d;--teal:#1c8587;--teal-mid:#14a3a5;--teal-soft:#dff4f3;--sky:#eaf7ff;--text:#17324a;--muted:#61758a;--line:rgba(6,46,86,.1);--shadow-sm:0 8px 24px rgba(4,31,61,.08);--shadow-md:0 18px 50px rgba(4,31,61,.12);--r-sm:16px;--r-md:22px;--r-lg:32px;--ease:cubic-bezier(.25,.46,.45,.94);--ease-spring:cubic-bezier(.34,1.56,.64,1)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Bricolage Grotesque',system-ui,sans-serif;color:var(--text);background:#f8fcff;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .shell{width:min(1160px,calc(100% - 40px));margin:0 auto}
+    .topbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 20px;background:rgba(248,252,255,.85);backdrop-filter:blur(24px);box-shadow:0 2px 40px rgba(4,31,61,.09)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.9);backdrop-filter:blur(20px);border:1px solid var(--line);border-radius:28px;padding:10px 12px 10px 14px;box-shadow:var(--shadow-sm);max-width:1160px;margin:0 auto}
+    .brand{display:flex;align-items:center;gap:13px;flex-shrink:0;min-width:max-content}
+    .brand-mark{width:70px;height:70px;flex:0 0 70px;border-radius:22px;background:#fff;border:1px solid rgba(6,46,86,.12);display:grid;place-items:center;box-shadow:0 12px 28px rgba(4,31,61,.10);overflow:hidden;padding:4px}
+    .brand-mark img{width:72px;height:72px;max-width:none;object-fit:contain;transform:scale(1.02) translateX(-4px) translateY(-3px)}
+    .brand-text{line-height:1.05}
+    .brand-name{font-size:22px;font-weight:900;letter-spacing:-0.045em;color:var(--navy)}
+    .brand-name em{color:var(--teal);font-style:normal}
+    .brand-sub{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.01em}
+    .nav-links{display:flex;align-items:center;gap:2px;background:rgba(234,247,255,.7);border:1px solid rgba(6,46,86,.06);border-radius:999px;padding:5px}
+    .nav-links a{padding:8px 14px;border-radius:999px;font-size:13.5px;font-weight:600;color:var(--muted);transition:all .22s var(--ease);white-space:nowrap}
+    .nav-links a:hover{color:var(--navy);background:white;box-shadow:0 4px 14px rgba(4,31,61,.1)}
+    .nav-cta{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--navy),var(--teal));color:white;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:700;box-shadow:0 8px 24px rgba(6,46,86,.28);transition:transform .22s var(--ease-spring),box-shadow .22s;white-space:nowrap}
+    .nav-cta:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(6,46,86,.32)}
+    .hamburger{display:none;width:40px;height:40px;border-radius:12px;background:var(--sky);border:1px solid var(--line);cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+    .hamburger span{display:block;width:18px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-menu{position:fixed;inset:0;z-index:99;background:rgba(248,252,255,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+    .mobile-menu.open{opacity:1;pointer-events:all}
+    .mobile-menu a{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.03em;padding:10px 24px;border-radius:16px;transition:all .2s}
+    .mobile-menu a:hover{background:var(--teal-soft);color:var(--teal)}
+    .mobile-cta{margin-top:20px!important;display:inline-flex!important;align-items:center!important;gap:8px!important;padding:16px 32px!important;border-radius:999px!important;background:linear-gradient(135deg,var(--navy),var(--teal))!important;color:white!important;font-size:18px!important;font-weight:700!important}
+    main{padding-top:100px}
+    .legal-hero{padding:56px 0 44px;position:relative;overflow:hidden;background:linear-gradient(180deg,#f2f8fd,#fff);border-bottom:1px solid var(--line)}
+    .legal-hero::before{content:'';position:absolute;right:-200px;top:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(88,174,222,.18),transparent 64%);pointer-events:none}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:white;border:1px solid var(--line);box-shadow:var(--shadow-sm);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
+    .eyebrow::before{content:'';width:18px;height:2px;background:var(--teal);border-radius:2px}
+    h1{font-size:clamp(34px,5vw,60px);line-height:.97;letter-spacing:-.04em;font-weight:800;color:var(--navy-2);margin-bottom:16px;max-width:820px}
+    .hero-lead{font-size:17px;color:var(--muted);max-width:680px;line-height:1.68}
+    .legal-section{padding:44px 0 100px}
+    .legal-layout{display:grid;grid-template-columns:0.72fr 1.28fr;gap:24px;align-items:start}
+    .side-card{position:sticky;top:108px;padding:26px;border-radius:var(--r-md);background:rgba(255,255,255,.92);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+    .side-card h2{font-size:17px;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:8px}
+    .side-card>p{font-size:14px;color:var(--muted);margin-bottom:18px;line-height:1.6}
+    .side-links{list-style:none;display:grid;gap:6px}
+    .side-links a{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;border-radius:13px;background:rgba(234,247,255,.8);color:var(--navy);font-weight:600;font-size:14px;border:1px solid rgba(6,46,86,.06);transition:all .2s var(--ease)}
+    .side-links a:hover{background:white;box-shadow:var(--shadow-sm);color:var(--teal)}
+    .side-links a span{color:var(--teal);font-size:13px}
+    .content-card{padding:36px;border-radius:var(--r-md);background:rgba(255,255,255,.92);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+    .content-block{padding-bottom:32px;margin-bottom:32px;border-bottom:1px solid rgba(6,46,86,.08)}
+    .content-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .content-block h2{font-size:clamp(22px,2.8vw,32px);font-weight:800;letter-spacing:-.035em;color:var(--navy-2);margin-bottom:14px;line-height:1.05}
+    .content-block h3{font-size:17px;font-weight:700;color:var(--navy);margin:22px 0 8px;letter-spacing:-.02em}
+    .content-block p{font-size:15.5px;color:var(--muted);line-height:1.75;margin-bottom:12px}
+    .info-box{padding:20px;border-radius:var(--r-sm);background:linear-gradient(135deg,rgba(234,247,255,.9),rgba(223,244,243,.7));border:1px solid rgba(6,46,86,.08);margin:18px 0}
+    .info-box strong{display:block;color:var(--navy);font-size:15px;margin-bottom:6px}
+    .info-box p{margin-bottom:0}
+    .legal-list{list-style:none;display:grid;gap:9px;margin:14px 0}
+    .legal-list li{display:flex;gap:10px;font-size:15.5px;color:var(--muted);line-height:1.55}
+    .legal-list li::before{content:"✓";color:var(--teal);font-weight:900;flex-shrink:0;margin-top:1px}
+    footer{background:var(--navy-2);padding:48px 0 32px}
+    .footer-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .footer-brand-name{font-size:20px;font-weight:900;letter-spacing:-.045em;color:white}
+    .footer-brand-name em{color:var(--teal-mid);font-style:normal}
+    .footer-brand-sub{font-size:12px;color:rgba(255,255,255,.5);font-weight:700;margin-top:2px}
+    .footer-brand p{color:rgba(255,255,255,.55);font-size:14px;line-height:1.6;margin-top:14px;max-width:260px}
+    .footer-col h4{color:rgba(255,255,255,.9);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+    .footer-col a{display:block;color:rgba(255,255,255,.55);font-size:14px;padding:5px 0;transition:color .2s}
+    .footer-col a:hover{color:var(--teal-mid)}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:24px;color:rgba(255,255,255,.35);font-size:13px}
+    .footer-bottom a{color:rgba(255,255,255,.45);transition:color .2s}
+    .footer-bottom a:hover{color:var(--teal-mid)}
+    @media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.legal-layout{grid-template-columns:1fr}.side-card{position:static}.footer-inner{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.brand-mark{width:52px;height:52px;flex:0 0 52px;border-radius:16px}.brand-mark img{width:54px;height:54px;transform:scale(1.02) translateX(-3px) translateY(-2px)}.brand-name{font-size:17px}.brand-sub{font-size:10px}.content-card,.side-card{padding:22px}.footer-inner{grid-template-columns:1fr}.footer-bottom{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
-
 <body>
-  <header class="topbar">
-    <div class="page-shell nav">
-      <a href="./index.html#start" class="brand" aria-label="Webdesign-Elbe Startseite">
-        <div class="brand-mark">
-          <img src="./Assets/Logo-Header.png" alt="Webdesign-Elbe Logo" />
+ 
+<header class="topbar">
+  <div class="nav-inner">
+    <a href="./index.html" class="brand">
+      <div class="brand-mark"><img src="./assets/logo.png" alt="Webdesign-Elbe Logo" /></div>
+      <div class="brand-text">
+        <div class="brand-name">Webdesign-<em>Elbe</em></div>
+        <div class="brand-sub">Moderne Websites für KMU</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="./index.html#leistungen">Leistungen</a>
+      <a href="./index.html#referenzen">Referenzen</a>
+      <a href="./index.html#preise">Pakete & Preise</a>
+      <a href="./index.html#ueber">Über mich</a>
+      <a href="./index.html#kontakt">Kontakt</a>
+    </nav>
+    <a href="./index.html#kontakt" class="nav-cta">Projekt anfragen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</header>
+ 
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="./index.html" onclick="toggleMenu()">Start</a>
+  <a href="./index.html#leistungen" onclick="toggleMenu()">Leistungen</a>
+  <a href="./index.html#referenzen" onclick="toggleMenu()">Referenzen</a>
+  <a href="./index.html#preise" onclick="toggleMenu()">Pakete & Preise</a>
+  <a href="./index.html#ueber" onclick="toggleMenu()">Über mich</a>
+  <a href="./index.html#kontakt" onclick="toggleMenu()">Kontakt</a>
+  <a href="./index.html#kontakt" class="mobile-cta" onclick="toggleMenu()">Projekt anfragen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</nav>
+ 
+<main>
+  <section class="legal-hero">
+    <div class="shell">
+      <div class="eyebrow">Leistungsbeschreibung</div>
+      <h1>Was in den Website-Paketen enthalten ist.</h1>
+      <p class="hero-lead">Hier findest du den konkreten Leistungsumfang der Website-Pakete von Webdesign-Elbe. Die Übersicht schafft Transparenz vor Projektbeginn und hilft dabei, Erwartungen sauber abzustimmen.</p>
+    </div>
+  </section>
+ 
+  <section class="legal-section">
+    <div class="shell legal-layout">
+ 
+      <aside class="side-card">
+        <h2>Übersicht</h2>
+        <p>Springe direkt zu den wichtigsten Punkten der Leistungsbeschreibung.</p>
+        <ul class="side-links">
+          <li><a href="#allgemein">Allgemein <span>→</span></a></li>
+          <li><a href="#starter">Starter <span>→</span></a></li>
+          <li><a href="#business">Business <span>→</span></a></li>
+          <li><a href="#premium">Premium <span>→</span></a></li>
+          <li><a href="#individuell">Individuell <span>→</span></a></li>
+          <li><a href="#korrekturen">Korrekturen <span>→</span></a></li>
+          <li><a href="#rechte">Rechte & Inhalte <span>→</span></a></li>
+          <li><a href="#abnahme">Abnahme <span>→</span></a></li>
+        </ul>
+      </aside>
+ 
+      <article class="content-card">
+ 
+        <div id="allgemein" class="content-block">
+          <h2>Allgemeine Leistungen bei allen Website-Paketen</h2>
+          <p>Unabhängig vom gewählten Paket umfasst die Website-Erstellung grundsätzlich folgende Leistungen:</p>
+          <ul class="legal-list">
+            <li>Erstellung einer modernen, responsiven Website für Desktop, Tablet und Smartphone</li>
+            <li>Aufbau einer klaren Seitenstruktur mit übersichtlicher Navigation</li>
+            <li>Gestaltung passend zur Branche, Zielgruppe und gewünschten Stilrichtung</li>
+            <li>Einbindung bereitgestellter Texte, Bilder, Logos und Kontaktdaten</li>
+            <li>Grundlegende technische Optimierung für Ladezeit und Darstellung</li>
+            <li>Basis-SEO durch sinnvolle Seitentitel, Meta-Beschreibungen und strukturierte Inhalte</li>
+            <li>Prüfung der Darstellung in gängigen Bildschirmgrößen</li>
+            <li>Veröffentlichung der Website nach Freigabe des Kunden</li>
+          </ul>
         </div>
-        <div>
-          <div class="brand-name">Webdesign-<span>Elbe</span></div>
-          <div class="brand-subline">Moderne Websites für KMU</div>
+ 
+        <div id="starter" class="content-block">
+          <h2>Website-Paket „Starter"</h2>
+          <p>Das Paket „Starter" eignet sich für Selbstständige, kleine Betriebe und lokale Dienstleister, die schnell und kosteneffizient mit einer professionellen Website sichtbar werden möchten.</p>
+          <h3>Enthalten sind:</h3>
+          <ul class="legal-list">
+            <li>Onepager mit bis zu 5 Inhaltsbereichen</li>
+            <li>Mögliche Bereiche: Start, Leistungen, Über uns, Referenzen/Bilder und Kontakt</li>
+            <li>Individuelles Layout auf Grundlage der Branche und gewünschten Stilrichtung</li>
+            <li>Mobile Optimierung für Smartphone und Tablet</li>
+            <li>Kontaktbereich mit E-Mail-Adresse, Telefonnummer und Verlinkungen</li>
+            <li>Einbindung bereitgestellter Bilder, Texte und Logos</li>
+            <li>Basis-SEO für die Startseite</li>
+            <li>Technische Veröffentlichung</li>
+            <li>1 Korrekturschleife nach Vorlage des ersten vollständigen Entwurfs</li>
+          </ul>
+          <h3>Nicht enthalten sind insbesondere:</h3>
+          <ul class="legal-list">
+            <li>Mehrere Unterseiten</li>
+            <li>Neues Logo oder vollständiges Corporate Design</li>
+            <li>Rechtliche Erstellung oder Prüfung von Impressum und Datenschutz</li>
+            <li>Buchungs-, Shop-, Login- oder Datenbankfunktionen</li>
+            <li>Fortlaufende Wartung nach Veröffentlichung</li>
+          </ul>
+          <div class="info-box"><strong>Preis:</strong><p>ab 499 € einmalig</p></div>
         </div>
-      </a>
-
-      <nav class="nav-links" aria-label="Hauptnavigation">
+ 
+        <div id="business" class="content-block">
+          <h2>Website-Paket „Business"</h2>
+          <p>Das Paket „Business" eignet sich für Unternehmen, die Leistungen, Referenzen, Kontaktwege und Unternehmensinformationen ausführlicher darstellen möchten.</p>
+          <h3>Enthalten sind:</h3>
+          <ul class="legal-list">
+            <li>Mehrseitige Website mit Startseite und bis zu 4 Unterseiten</li>
+            <li>Mögliche Unterseiten: Leistungen, Über uns, Referenzen, Kontakt, Angebot/Branche</li>
+            <li>Klare Seitenstruktur und Nutzerführung</li>
+            <li>Individuelles Layout passend zur Branche und Zielgruppe</li>
+            <li>Mobile Optimierung für Smartphone und Tablet</li>
+            <li>Aufbau eines Leistungs- oder Referenzbereichs</li>
+            <li>Vorbereitung eines Kontaktformulars oder Kontaktbereichs</li>
+            <li>Basis-SEO für die wichtigsten Seiten</li>
+            <li>Technische Veröffentlichung der Website</li>
+            <li>2 Korrekturschleifen nach Vorlage des ersten vollständigen Entwurfs</li>
+          </ul>
+          <h3>Nicht enthalten sind insbesondere:</h3>
+          <ul class="legal-list">
+            <li>Komplexe Sonderfunktionen wie Shops, Kundenbereiche, Buchungssysteme oder Datenbanken</li>
+            <li>Erstellung rechtlicher Pflichttexte</li>
+            <li>Laufende Pflege nach Veröffentlichung</li>
+            <li>Umfangreiche Suchmaschinenoptimierung über Basis-SEO hinaus</li>
+            <li>Professionelle Foto-, Video- oder Grafikproduktion</li>
+          </ul>
+          <div class="info-box"><strong>Preis:</strong><p>899 € einmalig</p></div>
+        </div>
+ 
+        <div id="premium" class="content-block">
+          <h2>Website-Paket „Premium"</h2>
+          <p>Das Paket „Premium" eignet sich für Unternehmen, die einen besonders hochwertigen, individuellen und visuell ausgearbeiteten Webauftritt wünschen.</p>
+          <h3>Enthalten sind:</h3>
+          <ul class="legal-list">
+            <li>Mehrseitige Website mit hochwertigem individuellen Design</li>
+            <li>Startseite plus mehrere Unterseiten nach vereinbartem Umfang</li>
+            <li>Besondere visuelle Abschnitte, Animationen oder hochwertige Layoutbereiche</li>
+            <li>Erweiterte Inhaltsstruktur für Leistungen, Referenzen oder Angebote</li>
+            <li>Intensive Optimierung für Smartphone, Tablet und Desktop</li>
+            <li>Einbindung bereitgestellter Bilder, Texte, Logos und Markeninformationen</li>
+            <li>Basis-SEO für die wichtigsten Seiten</li>
+            <li>Technische Veröffentlichung der Website</li>
+            <li>2 Korrekturschleifen nach Vorlage des ersten vollständigen Entwurfs</li>
+          </ul>
+          <h3>Nicht enthalten sind insbesondere:</h3>
+          <ul class="legal-list">
+            <li>Rechtliche Beratung oder rechtliche Prüfung der Website</li>
+            <li>Komplexe Webanwendungen, Shops, Datenbanken oder Mitgliederbereiche</li>
+            <li>Erstellung eines vollständigen Corporate Designs, sofern nicht gesondert vereinbart</li>
+            <li>Externe Lizenzkosten, Hostingkosten oder kostenpflichtige Drittanbieter-Dienste</li>
+            <li>Fortlaufende Betreuung nach Veröffentlichung, sofern kein Wartungspaket gebucht wird</li>
+          </ul>
+          <div class="info-box"><strong>Preis:</strong><p>ab 1.499 € einmalig</p></div>
+        </div>
+ 
+        <div id="individuell" class="content-block">
+          <h2>Individuelle Website-Lösung</h2>
+          <p>Wenn keines der Pakete zum gewünschten Umfang passt, kann eine individuelle Lösung vereinbart werden. Das gilt insbesondere für:</p>
+          <ul class="legal-list">
+            <li>Besonders viele Unterseiten</li>
+            <li>Komplexere Inhaltsstrukturen</li>
+            <li>Besondere Designwünsche</li>
+            <li>Zusätzliche Funktionen</li>
+            <li>Mehrere Sprachversionen</li>
+            <li>Einbindung externer Dienste</li>
+            <li>Umfangreiche Text-, Bild- oder Inhaltsarbeit</li>
+          </ul>
+        </div>
+ 
+        <div id="korrekturen" class="content-block">
+          <h2>Korrekturschleifen und Änderungswünsche</h2>
+          <p>Eine Korrekturschleife umfasst gebündelte Anpassungen am bestehenden Entwurf.</p>
+          <h3>Dazu gehören zum Beispiel:</h3>
+          <ul class="legal-list">
+            <li>Kleinere Textänderungen</li>
+            <li>Austausch einzelner Bilder</li>
+            <li>Anpassung von Reihenfolgen</li>
+            <li>Kleinere Farb- oder Abstandsänderungen</li>
+            <li>Korrektur von Kontaktdaten oder Links</li>
+          </ul>
+          <h3>Nicht als einfache Korrekturschleife gelten:</h3>
+          <ul class="legal-list">
+            <li>Vollständige Änderung der Stilrichtung nach Freigabe des Entwurfs</li>
+            <li>Neue Seiten oder neue umfangreiche Inhaltsbereiche</li>
+            <li>Neue Funktionen</li>
+            <li>Komplette Umstrukturierung der Website</li>
+            <li>Nachträgliche Änderung des Projektumfangs</li>
+          </ul>
+        </div>
+ 
+        <div id="rechte" class="content-block">
+          <h2>Inhalte, Rechte und rechtliche Verantwortung</h2>
+          <p>Der Kunde ist dafür verantwortlich, dass die von ihm bereitgestellten Inhalte rechtmäßig verwendet werden dürfen. Das betrifft insbesondere:</p>
+          <ul class="legal-list">
+            <li>Texte</li>
+            <li>Bilder</li>
+            <li>Logos</li>
+            <li>Markenbezeichnungen</li>
+            <li>Grafiken</li>
+            <li>Videos</li>
+            <li>Rechtliche Pflichtangaben</li>
+          </ul>
+          <p>Webdesign-Elbe übernimmt keine rechtliche Prüfung von Impressum, Datenschutzerklärung, Bildrechten, Markenrechten oder sonstigen rechtlichen Anforderungen, sofern dies nicht ausdrücklich gesondert vereinbart wird.</p>
+        </div>
+ 
+        <div id="abnahme" class="content-block">
+          <h2>Abnahme und Projektabschluss</h2>
+          <p>Nach Fertigstellung erhält der Kunde die Möglichkeit, die Website zu prüfen. Nach Umsetzung der vereinbarten Korrekturen erfolgt die Freigabe durch den Kunden.</p>
+          <p>Mit der Freigabe gilt die Website als abgenommen und der vereinbarte Projektumfang als erfüllt. Änderungen nach der Freigabe gelten als zusätzliche Leistungen und können entweder einzeln oder über ein Wartungspaket umgesetzt werden.</p>
+        </div>
+ 
+      </article>
+    </div>
+  </section>
+</main>
+ 
+<footer>
+  <div class="shell">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">Webdesign-<em>Elbe</em></div>
+        <div class="footer-brand-sub">Moderne Websites für KMU</div>
+        <p>Klare Webauftritte für kleine Unternehmen, Dienstleister und lokale Marken – persönlich betreut, modern umgesetzt.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="./index.html">Start</a>
         <a href="./index.html#leistungen">Leistungen</a>
         <a href="./index.html#referenzen">Referenzen</a>
-        <a href="./index.html#preise">Pakete</a>
-        <a href="./index.html#wartung">Wartung</a>
+        <a href="./index.html#preise">Pakete & Preise</a>
+        <a href="./index.html#ueber">Über mich</a>
         <a href="./index.html#kontakt">Kontakt</a>
-      </nav>
-
-      <a href="./index.html#anfrage" class="btn btn-primary">Projekt anfragen</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="legal-hero">
-      <div class="page-shell">
-        <div class="eyebrow"><span class="eyebrow-dot"></span> Leistungsbeschreibung</div>
-        <h1>Was in den Website-Paketen enthalten ist.</h1>
-        <p class="hero-copy">
-          Hier findest du den konkreten Leistungsumfang der Website-Pakete von Webdesign-Elbe.
-          Die Übersicht schafft Transparenz vor Projektbeginn und hilft dabei, Erwartungen sauber abzustimmen.
-        </p>
       </div>
-    </section>
-
-    <section class="legal-section">
-      <div class="page-shell legal-layout">
-
-        <aside class="side-card">
-          <h2>Übersicht</h2>
-          <p>Springe direkt zu den wichtigsten Punkten der Leistungsbeschreibung.</p>
-
-          <ul class="side-links">
-            <li><a href="#allgemein">Allgemein <span>→</span></a></li>
-            <li><a href="#starter">Starter <span>→</span></a></li>
-            <li><a href="#business">Business <span>→</span></a></li>
-            <li><a href="#premium">Premium <span>→</span></a></li>
-            <li><a href="#individuell">Individuell <span>→</span></a></li>
-            <li><a href="#korrekturen">Korrekturen <span>→</span></a></li>
-            <li><a href="#rechte">Rechte & Inhalte <span>→</span></a></li>
-            <li><a href="#abnahme">Abnahme <span>→</span></a></li>
-          </ul>
-        </aside>
-
-        <article class="content-card">
-
-          <div id="allgemein" class="content-block">
-            <h2>Allgemeine Leistungen bei allen Website-Paketen</h2>
-            <p>Unabhängig vom gewählten Paket umfasst die Website-Erstellung grundsätzlich folgende Leistungen:</p>
-
-            <ul class="legal-list">
-              <li>Erstellung einer modernen, responsiven Website für Desktop, Tablet und Smartphone</li>
-              <li>Aufbau einer klaren Seitenstruktur mit übersichtlicher Navigation</li>
-              <li>Gestaltung passend zur Branche, Zielgruppe und gewünschten Stilrichtung</li>
-              <li>Einbindung bereitgestellter Texte, Bilder, Logos und Kontaktdaten</li>
-              <li>Grundlegende technische Optimierung für Ladezeit und Darstellung</li>
-              <li>Basis-SEO durch sinnvolle Seitentitel, Meta-Beschreibungen und strukturierte Inhalte</li>
-              <li>Prüfung der Darstellung in gängigen Bildschirmgrößen</li>
-              <li>Veröffentlichung der Website nach Freigabe des Kunden</li>
-            </ul>
-          </div>
-
-          <div id="starter" class="content-block">
-            <h2>Website-Paket „Starter“</h2>
-            <p>
-              Das Paket „Starter“ eignet sich für Selbstständige, kleine Betriebe und lokale Dienstleister,
-              die schnell und kosteneffizient mit einer professionellen Website sichtbar werden möchten.
-            </p>
-
-            <h3>Enthalten sind:</h3>
-            <ul class="legal-list">
-              <li>Onepager mit bis zu 5 Inhaltsbereichen</li>
-              <li>Mögliche Bereiche: Start, Leistungen, Über uns, Referenzen/Bilder und Kontakt</li>
-              <li>Individuelles Layout auf Grundlage der Branche und gewünschten Stilrichtung</li>
-              <li>Mobile Optimierung für Smartphone und Tablet</li>
-              <li>Kontaktbereich mit E-Mail-Adresse, Telefonnummer und Verlinkungen</li>
-              <li>Einbindung bereitgestellter Bilder, Texte und Logos</li>
-              <li>Basis-SEO für die Startseite</li>
-              <li>Technische Veröffentlichung</li>
-              <li>1 Korrekturschleife nach Vorlage des ersten vollständigen Entwurfs</li>
-            </ul>
-
-            <h3>Nicht enthalten sind insbesondere:</h3>
-            <ul class="legal-list">
-              <li>Mehrere Unterseiten</li>
-              <li>Neues Logo oder vollständiges Corporate Design</li>
-              <li>Rechtliche Erstellung oder Prüfung von Impressum und Datenschutz</li>
-              <li>Buchungs-, Shop-, Login- oder Datenbankfunktionen</li>
-              <li>Fortlaufende Wartung nach Veröffentlichung</li>
-            </ul>
-
-            <div class="info-box">
-              <strong>Preis:</strong>
-              <p>ab 499 € einmalig</p>
-            </div>
-          </div>
-
-          <div id="business" class="content-block">
-            <h2>Website-Paket „Business“</h2>
-            <p>
-              Das Paket „Business“ eignet sich für Unternehmen, die Leistungen, Referenzen,
-              Kontaktwege und Unternehmensinformationen ausführlicher darstellen möchten.
-            </p>
-
-            <h3>Enthalten sind:</h3>
-            <ul class="legal-list">
-              <li>Mehrseitige Website mit Startseite und bis zu 4 Unterseiten</li>
-              <li>Mögliche Unterseiten: Leistungen, Über uns, Referenzen, Kontakt, Angebot/Branche</li>
-              <li>Klare Seitenstruktur und Nutzerführung</li>
-              <li>Individuelles Layout passend zur Branche und Zielgruppe</li>
-              <li>Mobile Optimierung für Smartphone und Tablet</li>
-              <li>Aufbau eines Leistungs- oder Referenzbereichs</li>
-              <li>Vorbereitung eines Kontaktformulars oder Kontaktbereichs</li>
-              <li>Basis-SEO für die wichtigsten Seiten</li>
-              <li>Technische Veröffentlichung der Website</li>
-              <li>2 Korrekturschleifen nach Vorlage des ersten vollständigen Entwurfs</li>
-            </ul>
-
-            <h3>Nicht enthalten sind insbesondere:</h3>
-            <ul class="legal-list">
-              <li>Komplexe Sonderfunktionen wie Shops, Kundenbereiche, Buchungssysteme oder Datenbanken</li>
-              <li>Erstellung rechtlicher Pflichttexte</li>
-              <li>Laufende Pflege nach Veröffentlichung</li>
-              <li>Umfangreiche Suchmaschinenoptimierung über Basis-SEO hinaus</li>
-              <li>Professionelle Foto-, Video- oder Grafikproduktion</li>
-            </ul>
-
-            <div class="info-box">
-              <strong>Preis:</strong>
-              <p>899 € einmalig</p>
-            </div>
-          </div>
-
-          <div id="premium" class="content-block">
-            <h2>Website-Paket „Premium“</h2>
-            <p>
-              Das Paket „Premium“ eignet sich für Unternehmen, die einen besonders hochwertigen,
-              individuellen und visuell ausgearbeiteten Webauftritt wünschen.
-            </p>
-
-            <h3>Enthalten sind:</h3>
-            <ul class="legal-list">
-              <li>Mehrseitige Website mit hochwertigem individuellen Design</li>
-              <li>Startseite plus mehrere Unterseiten nach vereinbartem Umfang</li>
-              <li>Besondere visuelle Abschnitte, Animationen oder hochwertige Layoutbereiche</li>
-              <li>Erweiterte Inhaltsstruktur für Leistungen, Referenzen oder Angebote</li>
-              <li>Intensive Optimierung für Smartphone, Tablet und Desktop</li>
-              <li>Einbindung bereitgestellter Bilder, Texte, Logos und Markeninformationen</li>
-              <li>Basis-SEO für die wichtigsten Seiten</li>
-              <li>Technische Veröffentlichung der Website</li>
-              <li>2 Korrekturschleifen nach Vorlage des ersten vollständigen Entwurfs</li>
-            </ul>
-
-            <h3>Nicht enthalten sind insbesondere:</h3>
-            <ul class="legal-list">
-              <li>Rechtliche Beratung oder rechtliche Prüfung der Website</li>
-              <li>Komplexe Webanwendungen, Shops, Datenbanken oder Mitgliederbereiche</li>
-              <li>Erstellung eines vollständigen Corporate Designs, sofern nicht gesondert vereinbart</li>
-              <li>Externe Lizenzkosten, Hostingkosten oder kostenpflichtige Drittanbieter-Dienste</li>
-              <li>Fortlaufende Betreuung nach Veröffentlichung, sofern kein Wartungspaket gebucht wird</li>
-            </ul>
-
-            <div class="info-box">
-              <strong>Preis:</strong>
-              <p>ab 1.499 € einmalig</p>
-            </div>
-          </div>
-
-          <div id="individuell" class="content-block">
-            <h2>Individuelle Website-Lösung</h2>
-            <p>
-              Wenn keines der Pakete zum gewünschten Umfang passt, kann eine individuelle Lösung vereinbart werden.
-            </p>
-
-            <ul class="legal-list">
-              <li>besonders viele Unterseiten</li>
-              <li>komplexere Inhaltsstrukturen</li>
-              <li>besondere Designwünsche</li>
-              <li>zusätzliche Funktionen</li>
-              <li>mehrere Sprachversionen</li>
-              <li>Einbindung externer Dienste</li>
-              <li>umfangreiche Text-, Bild- oder Inhaltsarbeit</li>
-            </ul>
-          </div>
-
-          <div id="korrekturen" class="content-block">
-            <h2>Korrekturschleifen und Änderungswünsche</h2>
-            <p>Eine Korrekturschleife umfasst gebündelte Anpassungen am bestehenden Entwurf.</p>
-
-            <h3>Dazu gehören zum Beispiel:</h3>
-            <ul class="legal-list">
-              <li>kleinere Textänderungen</li>
-              <li>Austausch einzelner Bilder</li>
-              <li>Anpassung von Reihenfolgen</li>
-              <li>kleinere Farb- oder Abstandsänderungen</li>
-              <li>Korrektur von Kontaktdaten oder Links</li>
-            </ul>
-
-            <h3>Nicht als einfache Korrekturschleife gelten:</h3>
-            <ul class="legal-list">
-              <li>vollständige Änderung der Stilrichtung nach Freigabe des Entwurfs</li>
-              <li>neue Seiten oder neue umfangreiche Inhaltsbereiche</li>
-              <li>neue Funktionen</li>
-              <li>komplette Umstrukturierung der Website</li>
-              <li>nachträgliche Änderung des Projektumfangs</li>
-            </ul>
-          </div>
-
-          <div id="rechte" class="content-block">
-            <h2>Inhalte, Rechte und rechtliche Verantwortung</h2>
-            <p>
-              Der Kunde ist dafür verantwortlich, dass die von ihm bereitgestellten Inhalte rechtmäßig verwendet werden dürfen.
-            </p>
-
-            <ul class="legal-list">
-              <li>Texte</li>
-              <li>Bilder</li>
-              <li>Logos</li>
-              <li>Markenbezeichnungen</li>
-              <li>Grafiken</li>
-              <li>Videos</li>
-              <li>rechtliche Pflichtangaben</li>
-            </ul>
-
-            <p>
-              Webdesign-Elbe übernimmt keine rechtliche Prüfung von Impressum, Datenschutzerklärung,
-              Bildrechten, Markenrechten oder sonstigen rechtlichen Anforderungen, sofern dies nicht ausdrücklich gesondert vereinbart wird.
-            </p>
-          </div>
-
-          <div id="abnahme" class="content-block">
-            <h2>Abnahme und Projektabschluss</h2>
-            <p>
-              Nach Fertigstellung erhält der Kunde die Möglichkeit, die Website zu prüfen.
-              Nach Umsetzung der vereinbarten Korrekturen erfolgt die Freigabe durch den Kunden.
-            </p>
-
-            <p>
-              Mit der Freigabe gilt die Website als abgenommen und der vereinbarte Projektumfang als erfüllt.
-              Änderungen nach der Freigabe gelten als zusätzliche Leistungen und können entweder einzeln oder über ein Wartungspaket umgesetzt werden.
-            </p>
-          </div>
-
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="page-shell footer-grid">
-      <div>
-        <strong>Webdesign-Elbe</strong>
-        <p>Moderne Websites für kleine Unternehmen.</p>
-      </div>
-
-      <div class="footer-links">
-        <a href="./index.html#referenzen">Referenzen</a>
-        <a href="./index.html#preise">Pakete</a>
-        <a href="./index.html#wartung">Wartung</a>
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
         <a href="./impressum.html">Impressum</a>
         <a href="./datenschutz.html">Datenschutz</a>
+        <a href="./leistungsbeschreibung.html">Leistungsbeschreibung</a>
+        <a href="./wartung-leistungsbeschreibung.html">Wartungsbeschreibung</a>
+        <h4 style="margin-top:18px">Kontakt</h4>
+        <a href="mailto:kontakt@webdesign-elbe.de">kontakt@webdesign-elbe.de</a>
       </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <span>© 2025 Webdesign-Elbe. Alle Rechte vorbehalten.</span>
+      <div style="display:flex;gap:16px"><a href="./impressum.html">Impressum</a><a href="./datenschutz.html">Datenschutz</a></div>
+    </div>
+  </div>
+</footer>
+ 
+<script>
+  function toggleMenu(){
+    document.getElementById('hamburger').classList.toggle('open');
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';
+  }
+</script>
 </body>
 </html>
