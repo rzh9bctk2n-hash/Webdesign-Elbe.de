@@ -82,28 +82,34 @@ transition: box-shadow .3s;
 max-width: 1160px; margin: 0 auto;
 }
 .brand {
-  display: flex; align-items: center; gap: 12px;
-  flex-shrink: 0; min-width: max-content;
+display: flex; align-items: center; gap: 13px;
+flex-shrink: 0; min-width: max-content;
 }
 .brand-mark {
-  width: 46px; height: 46px; flex: 0 0 46px;
-  display: grid; place-items: center;
-  flex-shrink: 0;
+width: 70px; height: 70px; flex: 0 0 70px;
+border-radius: 22px;
+background: #ffffff;
+border: 1px solid rgba(6,46,86,.12);
+display: grid; place-items: center;
+box-shadow: 0 12px 28px rgba(4,31,61,.10);
+overflow: hidden;
+padding: 4px;
 }
 .brand-mark img {
-  width: 46px; height: 46px; max-width: none;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(4,31,61,.2));
+width: 72px; height: 72px; max-width: none;
+object-fit: contain;
+transform: scale(1.02) translateX(-4px) translateY(-3px);
+transform-origin: center;
 }
 .brand-text { line-height: 1.05; }
 .brand-name {
-  font-size: 20px; font-weight: 900;
-  letter-spacing: -0.045em;
-  color: var(--navy);
-  font-family: inherit;
+font-size: 22px; font-weight: 900;
+letter-spacing: -0.045em;
+color: var(--navy);
+font-family: inherit;
 }
 .brand-name em { color: var(--teal); font-style: normal; }
-.brand-sub { font-size: 11.5px; color: var(--muted); font-weight: 700; letter-spacing: .01em; }
+.brand-sub { font-size: 12px; color: var(--muted); font-weight: 700; letter-spacing: .01em; }
 
 .nav-links {
 display: flex; align-items: center; gap: 2px;
@@ -312,8 +318,8 @@ transition: gap .2s, color .2s;
 .tlink:hover { gap: 8px; color: var(--navy); }
 
 /* ══════════════════════════════════════
-      HOME PAGE
-   ══════════════════════════════════════ */
+     HOME PAGE
+  ══════════════════════════════════════ */
 
 /* hero */
 .hero {
@@ -624,8 +630,8 @@ background: radial-gradient(circle, rgba(28,133,135,.1), transparent 70%);
 .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
 /* ══════════════════════════════════════
-      LEISTUNGEN PAGE
-   ══════════════════════════════════════ */
+     LEISTUNGEN PAGE
+  ══════════════════════════════════════ */
 .page-hero {
 padding: 64px 0 48px;
 text-align: center;
@@ -671,8 +677,8 @@ border: 50px solid rgba(255,255,255,.06);
 .leist-banner p { color: rgba(255,255,255,.7); max-width: 500px; margin-bottom: 28px; position: relative; z-index: 1; }
 
 /* ══════════════════════════════════════
-      REFERENZEN PAGE
-   ══════════════════════════════════════ */
+     REFERENZEN PAGE
+  ══════════════════════════════════════ */
 .ref-grid-full {
 display: grid; grid-template-columns: repeat(3,1fr);
 gap: 22px; margin-top: 48px;
@@ -728,8 +734,8 @@ display: flex; justify-content: space-between; align-items: center; gap: 24px;
 .refs-note-box p { color: var(--muted); font-size: 14.5px; max-width: 640px; }
 
 /* ══════════════════════════════════════
-      PREISE PAGE
-   ══════════════════════════════════════ */
+     PREISE PAGE
+  ══════════════════════════════════════ */
 .pricing-grid {
 display: grid; grid-template-columns: repeat(3,1fr);
 gap: 20px; align-items: stretch; margin-top: 48px;
@@ -864,8 +870,8 @@ display: flex; justify-content: space-between; align-items: center; gap: 24px;
 .maint-legal p { color: var(--muted); font-size: 14.5px; max-width: 580px; }
 
 /* ══════════════════════════════════════
-      ÜBER MICH PAGE
-   ══════════════════════════════════════ */
+     ÜBER MICH PAGE
+  ══════════════════════════════════════ */
 .about-grid {
 display: grid; grid-template-columns: .8fr 1.2fr;
 gap: 40px; align-items: center; margin-top: 48px;
@@ -909,8 +915,8 @@ transition: transform .25s var(--ease-spring), box-shadow .25s;
 .value-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
 /* ══════════════════════════════════════
-      KONTAKT PAGE
-   ══════════════════════════════════════ */
+     KONTAKT PAGE
+  ══════════════════════════════════════ */
 .contact-grid {
 display: grid; grid-template-columns: .85fr 1.15fr;
 gap: 28px; margin-top: 48px;
@@ -974,8 +980,8 @@ box-shadow: 0 0 0 4px rgba(28,133,135,.09);
 .form-submit { width: 100%; justify-content: center; padding: 16px; font-size: 16px; }
 
 /* ──────────────────────────────────────
-      RESPONSIVE
-   ────────────────────────────────────── */
+     RESPONSIVE
+  ────────────────────────────────────── */
 @media (max-width: 1060px) {
 .hero { grid-template-columns: 1fr; min-height: auto; gap: 48px; }
 .hero-visual { display: none; }
@@ -992,10 +998,16 @@ box-shadow: 0 0 0 4px rgba(28,133,135,.09);
 .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
-  .brand-mark { width: 38px; height: 38px; flex: 0 0 38px; }
-  .brand-mark img { width: 38px; height: 38px; }
-  .brand-name { font-size: 17px; }
-  .brand-sub { font-size: 10px; }
+.brand-mark {
+width: 52px; height: 52px; flex: 0 0 52px;
+border-radius: 16px;
+}
+.brand-mark img {
+width: 54px; height: 54px;
+transform: scale(1.02) translateX(-3px) translateY(-2px);
+}
+.brand-name { font-size: 17px; }
+.brand-sub { font-size: 10px; }
 }
 @media (max-width: 640px) {
 .svc-grid, .refs-strip, .ref-grid-full, .pricing-grid,
@@ -1016,14 +1028,14 @@ box-shadow: 0 0 0 4px rgba(28,133,135,.09);
 <!-- ─── TOPBAR ─── -->
 <header class="topbar" id="topbar">
 <div class="nav-inner">
-<a href="./index.html" class="brand">
-  <div class="brand-mark">
-    <img src="./assets/logo.png" alt="Webdesign-Elbe Logo" />
-  </div>
-  <div class="brand-text">
-    <div class="brand-name">Webdesign-<em>Elbe</em></div>
-    <div class="brand-sub">Moderne Websites für KMU</div>
-  </div>
+<a href="#" class="brand" data-page="home" onclick="navigate('home');return false;">
+<div class="brand-mark">
+<img src="./assets/logo.png" alt="Webdesign-Elbe Logo" />
+</div>
+<div class="brand-text">
+<div class="brand-name">Webdesign-<em>Elbe</em></div>
+<div class="brand-sub">Moderne Websites für KMU</div>
+</div>
 </a>
 
 <nav class="nav-links" id="navLinks">
@@ -1083,6 +1095,10 @@ Projekt anfragen
 </div>
 <div class="footer-col">
 <h4>Rechtliches</h4>
+<a href="./impressum.html">Impressum</a>
+<a href="./datenschutz.html">Datenschutz</a>
+<a href="./leistungsbeschreibung.html">Leistungsbeschreibung</a>
+<a href="./wartung-leistungsbeschreibung.html">Wartungsbeschreibung</a>
 <a href="./impressum/">Impressum</a>
 <a href="./datenschutz/">Datenschutz</a>
 <a href="./leistungsbeschreibung/">Leistungsbeschreibung</a>
@@ -1104,7 +1120,7 @@ Projekt anfragen
 
 <script>
 /* ══════════════════════════════════════════════
-  ROUTER & STATE
+ ROUTER & STATE
 ══════════════════════════════════════════════ */
 let currentPage = 'home';
 
@@ -1129,14 +1145,14 @@ navigate(page, false);
 });
 
 /* ══════════════════════════════════════════════
-  TOPBAR SCROLL
+ TOPBAR SCROLL
 ══════════════════════════════════════════════ */
 window.addEventListener('scroll', () => {
 document.getElementById('topbar').classList.toggle('scrolled', window.scrollY > 20);
 }, {passive: true});
 
 /* ══════════════════════════════════════════════
-  MOBILE MENU
+ MOBILE MENU
 ══════════════════════════════════════════════ */
 function toggleMenu() {
 const h = document.getElementById('hamburger');
@@ -1147,7 +1163,7 @@ document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
 }
 
 /* ══════════════════════════════════════════════
-  SCROLL REVEAL
+ SCROLL REVEAL
 ══════════════════════════════════════════════ */
 function initReveal() {
 const els = document.querySelectorAll('.reveal');
@@ -1159,7 +1175,7 @@ els.forEach(el => io.observe(el));
 }
 
 /* ══════════════════════════════════════════════
-  PAGE RENDER
+ PAGE RENDER
 ══════════════════════════════════════════════ */
 function renderPage(page) {
 const app = document.getElementById('app');
@@ -1175,8 +1191,8 @@ initReveal();
 }
 
 /* ══════════════════════════════════════════════
-  UNSPLASH IMAGES (commercial-use, Unsplash license)
-  IDs from Unsplash – free for commercial use
+ UNSPLASH IMAGES (commercial-use, Unsplash license)
+ IDs from Unsplash – free for commercial use
 ══════════════════════════════════════════════ */
 const IMG = {
 hero:      'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=900&q=80&auto=format&fit=crop',
@@ -1187,788 +1203,788 @@ ref3:      'https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=1200&
 };
 
 /* ══════════════════════════════════════════════
-  HOME
+ HOME
 ══════════════════════════════════════════════ */
 function home() { return `
 <section style="padding-top:0">
- <div class="shell">
-   <div class="hero">
-     <div>
-       <div class="hero-eyebrow">
-         <span class="hero-eyebrow-dot"></span>
-         Webdesign für kleine und mittelgroße Unternehmen
-       </div>
-       <h1>Moderne Websites, <br>die sofort <span class="accent">professionell</span> wirken.</h1>
-       <p class="hero-copy">
-         Webdesign-Elbe entwickelt klare, schnelle und hochwertige Websites für lokale Unternehmen.
-         Schlank im Aufbau, stark im Eindruck – optimiert für Smartphone, Tablet und Desktop.
-       </p>
-       <div class="hero-actions">
-         <a href="#" class="btn btn-primary" onclick="navigate('kontakt');return false;">
-           Projekt anfragen
-           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-         </a>
-         <a href="#" class="btn btn-ghost" onclick="navigate('referenzen');return false;">Referenzen ansehen</a>
-       </div>
-       <div class="hero-trust">
-         <span class="hero-trust-item">Klare Paketpreise</span>
-         <span class="hero-trust-item">Mobil optimiert</span>
-         <span class="hero-trust-item">Persönliche Umsetzung</span>
-       </div>
-     </div>
+<div class="shell">
+  <div class="hero">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        Webdesign für kleine und mittelgroße Unternehmen
+      </div>
+      <h1>Moderne Websites, <br>die sofort <span class="accent">professionell</span> wirken.</h1>
+      <p class="hero-copy">
+        Webdesign-Elbe entwickelt klare, schnelle und hochwertige Websites für lokale Unternehmen.
+        Schlank im Aufbau, stark im Eindruck – optimiert für Smartphone, Tablet und Desktop.
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary" onclick="navigate('kontakt');return false;">
+          Projekt anfragen
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#" class="btn btn-ghost" onclick="navigate('referenzen');return false;">Referenzen ansehen</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-item">Klare Paketpreise</span>
+        <span class="hero-trust-item">Mobil optimiert</span>
+        <span class="hero-trust-item">Persönliche Umsetzung</span>
+      </div>
+    </div>
 
-     <div class="hero-visual">
-       <div class="hero-browser">
-         <div class="browser-bar">
-           <span class="bdot"></span><span class="bdot"></span><span class="bdot"></span>
-           <div class="browser-url">webdesign-elbe.de</div>
-         </div>
-         <div class="browser-body">
-           <div class="bb-main">
-             <div>
-               <small>NEUE WEBSITE</small>
-               <strong>Ein Auftritt, der Vertrauen schafft.</strong>
-             </div>
-             <div class="bb-lines">
-               <i></i><i></i><i></i>
-             </div>
-           </div>
-           <div class="bb-side">
-             <div class="bb-card"><b>Leistungen</b><span></span><span></span></div>
-             <div class="bb-card"><b>Referenzen</b><span></span><span></span></div>
-             <div class="bb-card"><b>Kontakt</b><span></span><span></span></div>
-           </div>
-         </div>
-       </div>
+    <div class="hero-visual">
+      <div class="hero-browser">
+        <div class="browser-bar">
+          <span class="bdot"></span><span class="bdot"></span><span class="bdot"></span>
+          <div class="browser-url">webdesign-elbe.de</div>
+        </div>
+        <div class="browser-body">
+          <div class="bb-main">
+            <div>
+              <small>NEUE WEBSITE</small>
+              <strong>Ein Auftritt, der Vertrauen schafft.</strong>
+            </div>
+            <div class="bb-lines">
+              <i></i><i></i><i></i>
+            </div>
+          </div>
+          <div class="bb-side">
+            <div class="bb-card"><b>Leistungen</b><span></span><span></span></div>
+            <div class="bb-card"><b>Referenzen</b><span></span><span></span></div>
+            <div class="bb-card"><b>Kontakt</b><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
 
-       <div class="hero-badge">
-         <strong>Start ab 499 €</strong>
-         <span>Professionelle Pakete für KMU</span>
-       </div>
+      <div class="hero-badge">
+        <strong>Start ab 499 €</strong>
+        <span>Professionelle Pakete für KMU</span>
+      </div>
 
-       <div class="hero-phone">
-         <div class="hp-screen">
-           <div class="hp-hero-block"></div>
-           <div class="hp-line"></div>
-           <div class="hp-line"></div>
-           <div class="hp-line"></div>
-         </div>
-       </div>
-     </div>
-   </div>
+      <div class="hero-phone">
+        <div class="hp-screen">
+          <div class="hp-hero-block"></div>
+          <div class="hp-line"></div>
+          <div class="hp-line"></div>
+          <div class="hp-line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-   <!-- stats -->
-   <div class="stats-row">
-     <div class="stat-card reveal">
-       <div class="stat-num">3<em>+</em></div>
-       <div class="stat-label">Referenz-Stilrichtungen</div>
-     </div>
-     <div class="stat-card reveal reveal-delay-1">
-       <div class="stat-num">499<em>€</em></div>
-       <div class="stat-label">Einstiegspreis für den Starter</div>
-     </div>
-     <div class="stat-card reveal reveal-delay-2">
-       <div class="stat-num">24<em>h</em></div>
-       <div class="stat-label">Antwortzeit in der Regel</div>
-     </div>
-   </div>
- </div>
+  <!-- stats -->
+  <div class="stats-row">
+    <div class="stat-card reveal">
+      <div class="stat-num">3<em>+</em></div>
+      <div class="stat-label">Referenz-Stilrichtungen</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-1">
+      <div class="stat-num">499<em>€</em></div>
+      <div class="stat-label">Einstiegspreis für den Starter</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-2">
+      <div class="stat-num">24<em>h</em></div>
+      <div class="stat-label">Antwortzeit in der Regel</div>
+    </div>
+  </div>
+</div>
 </section>
 
 <!-- Services Teaser -->
 <section class="home-services" style="margin-top:0">
- <div class="shell">
-   <div class="svc-head">
-     <div>
-       <div class="kicker">Leistungen</div>
-       <h2>Alles, was deine Website braucht.</h2>
-     </div>
-     <a href="#" class="tlink" onclick="navigate('leistungen');return false;">Alle Leistungen →</a>
-   </div>
-   <div class="svc-grid">
-     <div class="svc-card reveal">
-       <div class="svc-icon">🌊</div>
-       <h3>Webdesign & Aufbau</h3>
-       <p>Individuelle Startseite, Unterseiten, klare Navigation – ein Look, der zu deinem Unternehmen passt.</p>
-     </div>
-     <div class="svc-card reveal reveal-delay-1">
-       <div class="svc-icon">📱</div>
-       <h3>Mobile Optimierung</h3>
-       <p>Deine Website sieht auf Smartphone, Tablet und Desktop sauber aus – wichtig für Kunden unterwegs.</p>
-     </div>
-     <div class="svc-card reveal reveal-delay-2">
-       <div class="svc-icon">🔍</div>
-       <h3>Basis-SEO</h3>
-       <p>Saubere Seitentitel, Beschreibungen und lokale Suchbegriffe als solide Grundlage für Google.</p>
-     </div>
-     <div class="svc-card reveal">
-       <div class="svc-icon">✍️</div>
-       <h3>Textstruktur & Inhalte</h3>
-       <p>Leistungen, Vorteile und Kontaktwege klar formuliert – ohne unnötiges Marketing-Blabla.</p>
-     </div>
-     <div class="svc-card reveal reveal-delay-1">
-       <div class="svc-icon">⚡</div>
-       <h3>Hosting & Veröffentlichung</h3>
-       <p>Domain-Anbindung und Veröffentlichung über eine schlanke, zuverlässige Hosting-Lösung.</p>
-     </div>
-     <div class="svc-card reveal reveal-delay-2">
-       <div class="svc-icon">🛟</div>
-       <h3>Wartung & Pflege</h3>
-       <p>Kleine Anpassungen, neue Bilder oder Öffnungszeiten – als flexibles Wartungspaket buchbar.</p>
-     </div>
-   </div>
- </div>
+<div class="shell">
+  <div class="svc-head">
+    <div>
+      <div class="kicker">Leistungen</div>
+      <h2>Alles, was deine Website braucht.</h2>
+    </div>
+    <a href="#" class="tlink" onclick="navigate('leistungen');return false;">Alle Leistungen →</a>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card reveal">
+      <div class="svc-icon">🌊</div>
+      <h3>Webdesign & Aufbau</h3>
+      <p>Individuelle Startseite, Unterseiten, klare Navigation – ein Look, der zu deinem Unternehmen passt.</p>
+    </div>
+    <div class="svc-card reveal reveal-delay-1">
+      <div class="svc-icon">📱</div>
+      <h3>Mobile Optimierung</h3>
+      <p>Deine Website sieht auf Smartphone, Tablet und Desktop sauber aus – wichtig für Kunden unterwegs.</p>
+    </div>
+    <div class="svc-card reveal reveal-delay-2">
+      <div class="svc-icon">🔍</div>
+      <h3>Basis-SEO</h3>
+      <p>Saubere Seitentitel, Beschreibungen und lokale Suchbegriffe als solide Grundlage für Google.</p>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">✍️</div>
+      <h3>Textstruktur & Inhalte</h3>
+      <p>Leistungen, Vorteile und Kontaktwege klar formuliert – ohne unnötiges Marketing-Blabla.</p>
+    </div>
+    <div class="svc-card reveal reveal-delay-1">
+      <div class="svc-icon">⚡</div>
+      <h3>Hosting & Veröffentlichung</h3>
+      <p>Domain-Anbindung und Veröffentlichung über eine schlanke, zuverlässige Hosting-Lösung.</p>
+    </div>
+    <div class="svc-card reveal reveal-delay-2">
+      <div class="svc-icon">🛟</div>
+      <h3>Wartung & Pflege</h3>
+      <p>Kleine Anpassungen, neue Bilder oder Öffnungszeiten – als flexibles Wartungspaket buchbar.</p>
+    </div>
+  </div>
+</div>
 </section>
 
 <!-- Refs Teaser -->
 <section class="home-refs" style="padding:80px 0 0">
- <div class="shell">
-   <div class="refs-head reveal">
-     <div>
-       <div class="kicker">Referenzen</div>
-       <h2>Drei Stilrichtungen als Orientierung.</h2>
-     </div>
-     <a href="#" class="tlink" onclick="navigate('referenzen');return false;">Alle Referenzen →</a>
-   </div>
-   <div class="refs-strip">
-     <div class="ref-tile reveal" onclick="navigate('referenzen')">
-       <div class="ref-thumb">
-         <img src="${IMG.ref1}" alt="Gebäudeservice Referenz" loading="lazy" />
-         <span class="ref-tag-pill">Simple · ab 499 €</span>
-       </div>
-       <div class="ref-body">
-         <h3>Elbe Gebäudeservice</h3>
-         <p>Klar und mobil optimiert – ideal für Dienstleister und lokale Betriebe.</p>
-       </div>
-     </div>
-     <div class="ref-tile reveal reveal-delay-1" onclick="navigate('referenzen')">
-       <div class="ref-thumb">
-         <img src="${IMG.ref2}" alt="Catering Referenz" loading="lazy" />
-         <span class="ref-tag-pill">Business · 899 €</span>
-       </div>
-       <div class="ref-body">
-         <h3>Elbgenuss Catering</h3>
-         <p>Starke Bildsprache, mehrere Inhaltsbereiche und klare Positionierung.</p>
-       </div>
-     </div>
-     <div class="ref-tile reveal reveal-delay-2" onclick="navigate('referenzen')">
-       <div class="ref-thumb">
-         <img src="${IMG.ref3}" alt="Premium Referenz" loading="lazy" />
-         <span class="ref-tag-pill">Premium · ab 1.499 €</span>
-       </div>
-       <div class="ref-body">
-         <h3>Elbe Ink - Premium Referenz</h3>
-         <p>Hochwertiger Look für Beratung, Coaching, Praxis und anspruchsvolle Dienstleistungen.</p>
-       </div>
-     </div>
-   </div>
- </div>
+<div class="shell">
+  <div class="refs-head reveal">
+    <div>
+      <div class="kicker">Referenzen</div>
+      <h2>Drei Stilrichtungen als Orientierung.</h2>
+    </div>
+    <a href="#" class="tlink" onclick="navigate('referenzen');return false;">Alle Referenzen →</a>
+  </div>
+  <div class="refs-strip">
+    <div class="ref-tile reveal" onclick="navigate('referenzen')">
+      <div class="ref-thumb">
+        <img src="${IMG.ref1}" alt="Gebäudeservice Referenz" loading="lazy" />
+        <span class="ref-tag-pill">Simple · ab 499 €</span>
+      </div>
+      <div class="ref-body">
+        <h3>Elbe Gebäudeservice</h3>
+        <p>Klar und mobil optimiert – ideal für Dienstleister und lokale Betriebe.</p>
+      </div>
+    </div>
+    <div class="ref-tile reveal reveal-delay-1" onclick="navigate('referenzen')">
+      <div class="ref-thumb">
+        <img src="${IMG.ref2}" alt="Catering Referenz" loading="lazy" />
+        <span class="ref-tag-pill">Business · 899 €</span>
+      </div>
+      <div class="ref-body">
+        <h3>Elbgenuss Catering</h3>
+        <p>Starke Bildsprache, mehrere Inhaltsbereiche und klare Positionierung.</p>
+      </div>
+    </div>
+    <div class="ref-tile reveal reveal-delay-2" onclick="navigate('referenzen')">
+      <div class="ref-thumb">
+        <img src="${IMG.ref3}" alt="Premium Referenz" loading="lazy" />
+        <span class="ref-tag-pill">Premium · ab 1.499 €</span>
+      </div>
+      <div class="ref-body">
+        <h3>Elbe Ink - Premium Referenz</h3>
+        <p>Hochwertiger Look für Beratung, Coaching, Praxis und anspruchsvolle Dienstleistungen.</p>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
 
 <!-- Process Strip -->
 <section class="home-process" style="margin-top:80px">
- <div class="shell">
-   <div class="kicker">Ablauf</div>
-   <h2>Von der Idee zur fertigen Seite.</h2>
-   <div class="process-steps" style="margin-top:36px">
-     <div class="process-step reveal">
-       <div class="step-num">1</div>
-       <h3>Kurzgespräch</h3>
-       <p>Wir klären Ziel, Branche, Stilrichtung, Umfang und vorhandene Inhalte.</p>
-     </div>
-     <div class="process-step reveal reveal-delay-1">
-       <div class="step-num">2</div>
-       <h3>Entwurf</h3>
-       <p>Du bekommst eine erste visuelle Richtung mit Struktur, Farben und Seitenaufbau.</p>
-     </div>
-     <div class="process-step reveal reveal-delay-2">
-       <div class="step-num">3</div>
-       <h3>Umsetzung</h3>
-       <p>Die Website wird sauber aufgebaut, mobil optimiert und technisch vorbereitet.</p>
-     </div>
-     <div class="process-step reveal reveal-delay-3">
-       <div class="step-num">4</div>
-       <h3>Onlinegang</h3>
-       <p>Nach deiner Freigabe wird die Seite veröffentlicht und kann geteilt werden.</p>
-     </div>
-   </div>
- </div>
+<div class="shell">
+  <div class="kicker">Ablauf</div>
+  <h2>Von der Idee zur fertigen Seite.</h2>
+  <div class="process-steps" style="margin-top:36px">
+    <div class="process-step reveal">
+      <div class="step-num">1</div>
+      <h3>Kurzgespräch</h3>
+      <p>Wir klären Ziel, Branche, Stilrichtung, Umfang und vorhandene Inhalte.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="step-num">2</div>
+      <h3>Entwurf</h3>
+      <p>Du bekommst eine erste visuelle Richtung mit Struktur, Farben und Seitenaufbau.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="step-num">3</div>
+      <h3>Umsetzung</h3>
+      <p>Die Website wird sauber aufgebaut, mobil optimiert und technisch vorbereitet.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="step-num">4</div>
+      <h3>Onlinegang</h3>
+      <p>Nach deiner Freigabe wird die Seite veröffentlicht und kann geteilt werden.</p>
+    </div>
+  </div>
+</div>
 </section>
 
 <!-- CTA -->
 <section class="home-cta">
- <div class="shell">
-   <div class="cta-box reveal">
-     <h2>Bereit für deinen neuen Webauftritt?</h2>
-     <p>Beschreibe kurz dein Vorhaben – ich melde mich in der Regel innerhalb von 24 Stunden mit einer ersten Rückmeldung.</p>
-     <div class="cta-actions">
-       <a href="#" class="btn btn-primary" onclick="navigate('kontakt');return false;">
-         Projekt anfragen
-         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-       </a>
-       <a href="#" class="btn btn-ghost" onclick="navigate('preise');return false;">Pakete & Preise ansehen</a>
-     </div>
-   </div>
- </div>
+<div class="shell">
+  <div class="cta-box reveal">
+    <h2>Bereit für deinen neuen Webauftritt?</h2>
+    <p>Beschreibe kurz dein Vorhaben – ich melde mich in der Regel innerhalb von 24 Stunden mit einer ersten Rückmeldung.</p>
+    <div class="cta-actions">
+      <a href="#" class="btn btn-primary" onclick="navigate('kontakt');return false;">
+        Projekt anfragen
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#" class="btn btn-ghost" onclick="navigate('preise');return false;">Pakete & Preise ansehen</a>
+    </div>
+  </div>
+</div>
 </section>
 `; }
 
 /* ══════════════════════════════════════════════
-  LEISTUNGEN
+ LEISTUNGEN
 ══════════════════════════════════════════════ */
 function leistungen() { return `
 <div class="shell">
- <div class="page-hero reveal">
-   <div class="kicker">Leistungen</div>
-   <h1>Alles, was deine Website <span class="accent">zum Start</span> braucht.</h1>
-   <p>Von der ersten Idee bis zur fertigen Online-Seite: Modernes Design, klare Inhalte und technische Umsetzung aus einer Hand.</p>
- </div>
+<div class="page-hero reveal">
+  <div class="kicker">Leistungen</div>
+  <h1>Alles, was deine Website <span class="accent">zum Start</span> braucht.</h1>
+  <p>Von der ersten Idee bis zur fertigen Online-Seite: Modernes Design, klare Inhalte und technische Umsetzung aus einer Hand.</p>
+</div>
 
- <div class="leistungen-grid">
-   <div class="leist-card reveal">
-     <div class="leist-icon">🌊</div>
-     <h3>Webdesign & Aufbau</h3>
-     <p>Individuelle Startseite, Unterseiten, klare Navigation und ein Look, der zu deinem Unternehmen passt. Jedes Design entsteht von Grund auf neu – ohne Templates von der Stange.</p>
-   </div>
-   <div class="leist-card reveal reveal-delay-1">
-     <div class="leist-icon">📱</div>
-     <h3>Mobile Optimierung</h3>
-     <p>Deine Website sieht auf Smartphone, Tablet und Desktop sauber aus – das ist nicht nur wichtig für das Erscheinungsbild, sondern auch ein relevanter Faktor für Google.</p>
-   </div>
-   <div class="leist-card reveal reveal-delay-2">
-     <div class="leist-icon">⚡</div>
-     <h3>Hosting & Veröffentlichung</h3>
-     <p>Auf Wunsch inklusive Einrichtung, Domain-Anbindung und Veröffentlichung über eine schlanke Hosting-Lösung. Kein technisches Vorwissen notwendig – ich erkläre jeden Schritt.</p>
-   </div>
-   <div class="leist-card reveal">
-     <div class="leist-icon">✍️</div>
-     <h3>Textstruktur & Inhalte</h3>
-     <p>Ich helfe dabei, Leistungen, Vorteile und Kontaktwege klar zu formulieren – ohne unnötiges Marketing-Blabla. Klare Sprache, die deine Kunden verstehen.</p>
-   </div>
-   <div class="leist-card reveal reveal-delay-1">
-     <div class="leist-icon">🔍</div>
-     <h3>Basis-SEO</h3>
-     <p>Saubere Seitentitel, Beschreibungen, Struktur und lokale Suchbegriffe als solide Grundlage für Google. Kein Versprechen von Seite 1, aber eine technisch saubere Basis.</p>
-   </div>
-   <div class="leist-card reveal reveal-delay-2">
-     <div class="leist-icon">🛟</div>
-     <h3>Pflege & Änderungen</h3>
-     <p>Kleine Anpassungen, neue Bilder oder geänderte Öffnungszeiten können als Wartungspaket ergänzt werden – oder einzeln nach Aufwand abgerechnet werden.</p>
-   </div>
- </div>
+<div class="leistungen-grid">
+  <div class="leist-card reveal">
+    <div class="leist-icon">🌊</div>
+    <h3>Webdesign & Aufbau</h3>
+    <p>Individuelle Startseite, Unterseiten, klare Navigation und ein Look, der zu deinem Unternehmen passt. Jedes Design entsteht von Grund auf neu – ohne Templates von der Stange.</p>
+  </div>
+  <div class="leist-card reveal reveal-delay-1">
+    <div class="leist-icon">📱</div>
+    <h3>Mobile Optimierung</h3>
+    <p>Deine Website sieht auf Smartphone, Tablet und Desktop sauber aus – das ist nicht nur wichtig für das Erscheinungsbild, sondern auch ein relevanter Faktor für Google.</p>
+  </div>
+  <div class="leist-card reveal reveal-delay-2">
+    <div class="leist-icon">⚡</div>
+    <h3>Hosting & Veröffentlichung</h3>
+    <p>Auf Wunsch inklusive Einrichtung, Domain-Anbindung und Veröffentlichung über eine schlanke Hosting-Lösung. Kein technisches Vorwissen notwendig – ich erkläre jeden Schritt.</p>
+  </div>
+  <div class="leist-card reveal">
+    <div class="leist-icon">✍️</div>
+    <h3>Textstruktur & Inhalte</h3>
+    <p>Ich helfe dabei, Leistungen, Vorteile und Kontaktwege klar zu formulieren – ohne unnötiges Marketing-Blabla. Klare Sprache, die deine Kunden verstehen.</p>
+  </div>
+  <div class="leist-card reveal reveal-delay-1">
+    <div class="leist-icon">🔍</div>
+    <h3>Basis-SEO</h3>
+    <p>Saubere Seitentitel, Beschreibungen, Struktur und lokale Suchbegriffe als solide Grundlage für Google. Kein Versprechen von Seite 1, aber eine technisch saubere Basis.</p>
+  </div>
+  <div class="leist-card reveal reveal-delay-2">
+    <div class="leist-icon">🛟</div>
+    <h3>Pflege & Änderungen</h3>
+    <p>Kleine Anpassungen, neue Bilder oder geänderte Öffnungszeiten können als Wartungspaket ergänzt werden – oder einzeln nach Aufwand abgerechnet werden.</p>
+  </div>
+</div>
 
- <div class="leist-banner reveal" style="margin-top:48px">
-   <h2>Nicht sicher, was du brauchst?</h2>
-   <p>Beschreibe kurz dein Vorhaben – ich schaue mir die Situation an und gebe eine erste unverbindliche Einschätzung.</p>
-   <a href="#" class="btn btn-ghost" style="background:rgba(255,255,255,.18);color:white;border:1px solid rgba(255,255,255,.25);" onclick="navigate('kontakt');return false;">
-     Kostenlos anfragen
-     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-   </a>
- </div>
+<div class="leist-banner reveal" style="margin-top:48px">
+  <h2>Nicht sicher, was du brauchst?</h2>
+  <p>Beschreibe kurz dein Vorhaben – ich schaue mir die Situation an und gebe eine erste unverbindliche Einschätzung.</p>
+  <a href="#" class="btn btn-ghost" style="background:rgba(255,255,255,.18);color:white;border:1px solid rgba(255,255,255,.25);" onclick="navigate('kontakt');return false;">
+    Kostenlos anfragen
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
 
- <!-- Process on leistungen too -->
- <div style="margin-top:80px;padding-bottom:20px">
-   <div class="kicker reveal">Ablauf</div>
-   <h2 class="reveal">So läuft ein Projekt ab.</h2>
-   <div class="process-steps" style="margin-top:32px">
-     <div class="process-step reveal" style="background:var(--sky);border-color:rgba(6,46,86,.08)">
-       <div class="step-num" style="background:var(--teal-soft);color:var(--teal)">1</div>
-       <h3 style="color:var(--navy)">Kurzgespräch</h3>
-       <p style="color:var(--muted)">Wir klären Ziel, Branche, Stilrichtung, Umfang und vorhandene Inhalte.</p>
-     </div>
-     <div class="process-step reveal reveal-delay-1" style="background:var(--sky);border-color:rgba(6,46,86,.08)">
-       <div class="step-num" style="background:var(--teal-soft);color:var(--teal)">2</div>
-       <h3 style="color:var(--navy)">Entwurf</h3>
-       <p style="color:var(--muted)">Du bekommst eine erste visuelle Richtung mit Struktur, Farben und Seitenaufbau.</p>
-     </div>
-     <div class="process-step reveal reveal-delay-2" style="background:var(--sky);border-color:rgba(6,46,86,.08)">
-       <div class="step-num" style="background:var(--teal-soft);color:var(--teal)">3</div>
-       <h3 style="color:var(--navy)">Umsetzung</h3>
-       <p style="color:var(--muted)">Die Website wird sauber aufgebaut, mobil optimiert und technisch vorbereitet.</p>
-     </div>
-     <div class="process-step reveal reveal-delay-3" style="background:var(--sky);border-color:rgba(6,46,86,.08)">
-       <div class="step-num" style="background:var(--teal-soft);color:var(--teal)">4</div>
-       <h3 style="color:var(--navy)">Onlinegang</h3>
-       <p style="color:var(--muted)">Nach deiner Freigabe wird die Seite veröffentlicht und kann geteilt werden.</p>
-     </div>
-   </div>
- </div>
+<!-- Process on leistungen too -->
+<div style="margin-top:80px;padding-bottom:20px">
+  <div class="kicker reveal">Ablauf</div>
+  <h2 class="reveal">So läuft ein Projekt ab.</h2>
+  <div class="process-steps" style="margin-top:32px">
+    <div class="process-step reveal" style="background:var(--sky);border-color:rgba(6,46,86,.08)">
+      <div class="step-num" style="background:var(--teal-soft);color:var(--teal)">1</div>
+      <h3 style="color:var(--navy)">Kurzgespräch</h3>
+      <p style="color:var(--muted)">Wir klären Ziel, Branche, Stilrichtung, Umfang und vorhandene Inhalte.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-1" style="background:var(--sky);border-color:rgba(6,46,86,.08)">
+      <div class="step-num" style="background:var(--teal-soft);color:var(--teal)">2</div>
+      <h3 style="color:var(--navy)">Entwurf</h3>
+      <p style="color:var(--muted)">Du bekommst eine erste visuelle Richtung mit Struktur, Farben und Seitenaufbau.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-2" style="background:var(--sky);border-color:rgba(6,46,86,.08)">
+      <div class="step-num" style="background:var(--teal-soft);color:var(--teal)">3</div>
+      <h3 style="color:var(--navy)">Umsetzung</h3>
+      <p style="color:var(--muted)">Die Website wird sauber aufgebaut, mobil optimiert und technisch vorbereitet.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-3" style="background:var(--sky);border-color:rgba(6,46,86,.08)">
+      <div class="step-num" style="background:var(--teal-soft);color:var(--teal)">4</div>
+      <h3 style="color:var(--navy)">Onlinegang</h3>
+      <p style="color:var(--muted)">Nach deiner Freigabe wird die Seite veröffentlicht und kann geteilt werden.</p>
+    </div>
+  </div>
+</div>
 </div>
 `; }
 
 /* ══════════════════════════════════════════════
-  REFERENZEN
+ REFERENZEN
 ══════════════════════════════════════════════ */
 function referenzen() { return `
 <div class="shell">
- <div class="page-hero reveal">
-   <div class="kicker">Referenzen</div>
-   <h1>Drei Stilrichtungen <span class="accent">als Orientierung.</span></h1>
-   <p>Je nach Branche, Zielgruppe und gewünschter Wertigkeit kann ein moderner Webauftritt sehr unterschiedlich wirken.</p>
- </div>
+<div class="page-hero reveal">
+  <div class="kicker">Referenzen</div>
+  <h1>Drei Stilrichtungen <span class="accent">als Orientierung.</span></h1>
+  <p>Je nach Branche, Zielgruppe und gewünschter Wertigkeit kann ein moderner Webauftritt sehr unterschiedlich wirken.</p>
+</div>
 
- <div class="ref-grid-full">
-   <div class="ref-card reveal">
-     <div class="ref-card-img">
-        <img src="${IMG.ref1}" alt="Elbe Gebäudeservice Referenz" loading="lazy" />
-       <span class="ref-price-tag">Simple · ab 499 €</span>
-     </div>
-     <div class="ref-card-body">
-       <h3>Elbe Gebäudeservice</h3>
-       <p>Eine klare Simple-Referenz für Dienstleister, Handwerk und lokale Betriebe: übersichtlich aufgebaut, mobil optimiert und mit direkter Anfrageführung.</p>
-       <div class="ref-tags">
-         <span>Dienstleistung</span>
-         <span>Clean</span>
-         <span>Mobil optimiert</span>
-       </div>
-       <div class="ref-card-footer">
-         <a href="https://webdesign-elbe.de/referenzen/elbe-gebaeudeservice/" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:10px 18px;font-size:13.5px">
-           Demo öffnen
-           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-         </a>
-       </div>
-     </div>
-   </div>
+<div class="ref-grid-full">
+  <div class="ref-card reveal">
+    <div class="ref-card-img">
+       <img src="${IMG.ref1}" alt="Elbe Gebäudeservice Referenz" loading="lazy" />
+      <span class="ref-price-tag">Simple · ab 499 €</span>
+    </div>
+    <div class="ref-card-body">
+      <h3>Elbe Gebäudeservice</h3>
+      <p>Eine klare Simple-Referenz für Dienstleister, Handwerk und lokale Betriebe: übersichtlich aufgebaut, mobil optimiert und mit direkter Anfrageführung.</p>
+      <div class="ref-tags">
+        <span>Dienstleistung</span>
+        <span>Clean</span>
+        <span>Mobil optimiert</span>
+      </div>
+      <div class="ref-card-footer">
+        <a href="https://webdesign-elbe.de/referenzen/elbe-gebaeudeservice/" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:10px 18px;font-size:13.5px">
+          Demo öffnen
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
-   <div class="ref-card reveal reveal-delay-1">
-     <div class="ref-card-img">
-       <img src="${IMG.ref2}" alt="Elbgenuss Catering Referenz" loading="lazy" />
-       <span class="ref-price-tag">Business · 899 €</span>
-     </div>
-     <div class="ref-card-body">
-       <h3>Elbgenuss Catering</h3>
-       <p>Eine ausführlichere Business-Referenz mit stärkerer Bildsprache, mehreren Inhaltsbereichen und klarer Positionierung für private und geschäftliche Anlässe.</p>
-       <div class="ref-tags">
-         <span>Gastronomie</span>
-         <span>Emotional</span>
-         <span>Event-Fokus</span>
-       </div>
-       <div class="ref-card-footer">
-         <a href="https://webdesign-elbe.de/referenzen/elbgenuss-catering/" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:10px 18px;font-size:13.5px">
-           Demo öffnen
-           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-         </a>
-       </div>
-     </div>
-   </div>
+  <div class="ref-card reveal reveal-delay-1">
+    <div class="ref-card-img">
+      <img src="${IMG.ref2}" alt="Elbgenuss Catering Referenz" loading="lazy" />
+      <span class="ref-price-tag">Business · 899 €</span>
+    </div>
+    <div class="ref-card-body">
+      <h3>Elbgenuss Catering</h3>
+      <p>Eine ausführlichere Business-Referenz mit stärkerer Bildsprache, mehreren Inhaltsbereichen und klarer Positionierung für private und geschäftliche Anlässe.</p>
+      <div class="ref-tags">
+        <span>Gastronomie</span>
+        <span>Emotional</span>
+        <span>Event-Fokus</span>
+      </div>
+      <div class="ref-card-footer">
+        <a href="https://webdesign-elbe.de/referenzen/elbgenuss-catering/" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:10px 18px;font-size:13.5px">
+          Demo öffnen
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
-   <div class="ref-card reveal reveal-delay-2">
-     <div class="ref-card-img">
-       <img src="${IMG.ref3}" alt="Elbe Ink - Premium Referenz" loading="lazy" />
-       <span class="ref-price-tag">Premium · ab 1.499 €</span>
-     </div>
-     <div class="ref-card-body">
-       <h3>Elbe Ink - Premium Referenz</h3>
-       <p>Eine hochwertige Premium-Referenz im modernen Look – ideal für Beratung, Coaching, Praxis, Beauty oder anspruchsvolle Dienstleistungen mit hohem Qualitätsanspruch.</p>
-       <div class="ref-tags">
-         <span>Premium</span>
-         <span>Hochwertig</span>
-         <span>Reduziert</span>
-       </div>
-       <div class="ref-card-footer">
-         <a href="https://webdesign-elbe.de/referenzen/elbe-ink/" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:10px 18px;font-size:13.5px">
-           Demo öffnen
-           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-         </a>
-       </div>
-     </div>
-   </div>
- </div>
+  <div class="ref-card reveal reveal-delay-2">
+    <div class="ref-card-img">
+      <img src="${IMG.ref3}" alt="Elbe Ink - Premium Referenz" loading="lazy" />
+      <span class="ref-price-tag">Premium · ab 1.499 €</span>
+    </div>
+    <div class="ref-card-body">
+      <h3>Elbe Ink - Premium Referenz</h3>
+      <p>Eine hochwertige Premium-Referenz im modernen Look – ideal für Beratung, Coaching, Praxis, Beauty oder anspruchsvolle Dienstleistungen mit hohem Qualitätsanspruch.</p>
+      <div class="ref-tags">
+        <span>Premium</span>
+        <span>Hochwertig</span>
+        <span>Reduziert</span>
+      </div>
+      <div class="ref-card-footer">
+        <a href="https://webdesign-elbe.de/referenzen/elbe-ink/" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:10px 18px;font-size:13.5px">
+          Demo öffnen
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
- <div class="refs-note-box reveal" style="margin-top:32px">
-   <div>
-     <strong>Weitere Demo- und Referenzseiten</strong>
-     <p>Neben den drei Hauptreferenzen findest du auf einer separaten Seite weitere Demo-Websites, Stilrichtungen und Branchenbeispiele als Inspiration für dein eigenes Projekt.</p>
-   </div>
-   <a href="./referenzen.html" class="tlink">Alle Referenzen öffnen →</a>
- </div>
+<div class="refs-note-box reveal" style="margin-top:32px">
+  <div>
+    <strong>Weitere Demo- und Referenzseiten</strong>
+    <p>Neben den drei Hauptreferenzen findest du auf einer separaten Seite weitere Demo-Websites, Stilrichtungen und Branchenbeispiele als Inspiration für dein eigenes Projekt.</p>
+  </div>
+  <a href="./referenzen.html" class="tlink">Alle Referenzen öffnen →</a>
+</div>
 
- <!-- CTA -->
- <div class="cta-box reveal" style="margin-top:48px;margin-bottom:20px">
-   <h2>Welcher Stil passt zu dir?</h2>
-   <p>Beschreibe kurz dein Vorhaben – ich helfe dabei, die richtige Stilrichtung und das passende Paket zu finden.</p>
-   <div class="cta-actions">
-     <a href="#" class="btn btn-primary" onclick="navigate('kontakt');return false;">Jetzt anfragen</a>
-     <a href="#" class="btn btn-ghost" onclick="navigate('preise');return false;">Preise ansehen</a>
-   </div>
- </div>
+<!-- CTA -->
+<div class="cta-box reveal" style="margin-top:48px;margin-bottom:20px">
+  <h2>Welcher Stil passt zu dir?</h2>
+  <p>Beschreibe kurz dein Vorhaben – ich helfe dabei, die richtige Stilrichtung und das passende Paket zu finden.</p>
+  <div class="cta-actions">
+    <a href="#" class="btn btn-primary" onclick="navigate('kontakt');return false;">Jetzt anfragen</a>
+    <a href="#" class="btn btn-ghost" onclick="navigate('preise');return false;">Preise ansehen</a>
+  </div>
+</div>
 </div>
 `; }
 
 /* ══════════════════════════════════════════════
-  PREISE
+ PREISE
 ══════════════════════════════════════════════ */
 function preise() { return `
 <div class="shell">
- <div class="page-hero reveal">
-   <div class="kicker">Pakete & Preise</div>
-   <h1>Klare Angebote statt <span class="accent">Agentur-Nebel.</span></h1>
-   <p>Die Preise sind als Orientierung gedacht. Je nach Umfang kann ein individuelles Angebot sinnvoll sein.</p>
- </div>
+<div class="page-hero reveal">
+  <div class="kicker">Pakete & Preise</div>
+  <h1>Klare Angebote statt <span class="accent">Agentur-Nebel.</span></h1>
+  <p>Die Preise sind als Orientierung gedacht. Je nach Umfang kann ein individuelles Angebot sinnvoll sein.</p>
+</div>
 
- <div class="pricing-grid">
-   <!-- Starter -->
-   <div class="price-card reveal">
-     <h3>Starter</h3>
-     <p>Für Selbstständige und kleine Betriebe, die schnell professionell sichtbar werden möchten.</p>
-     <div class="price-num">499 <span class="price-unit">€ einmalig</span></div>
-     <ul class="price-list">
-       <li><span class="check">✓</span> Onepager mit bis zu 5 Bereichen</li>
-       <li><span class="check">✓</span> Mobil optimiertes Design</li>
-       <li><span class="check">✓</span> Kontaktbereich</li>
-       <li><span class="check">✓</span> Basis-SEO</li>
-       <li><span class="check">✓</span> Einrichtung auf GitHub Pages möglich</li>
-     </ul>
-     <a href="#" class="btn btn-ghost" onclick="navigate('kontakt');return false;">Starter anfragen</a>
-   </div>
+<div class="pricing-grid">
+  <!-- Starter -->
+  <div class="price-card reveal">
+    <h3>Starter</h3>
+    <p>Für Selbstständige und kleine Betriebe, die schnell professionell sichtbar werden möchten.</p>
+    <div class="price-num">499 <span class="price-unit">€ einmalig</span></div>
+    <ul class="price-list">
+      <li><span class="check">✓</span> Onepager mit bis zu 5 Bereichen</li>
+      <li><span class="check">✓</span> Mobil optimiertes Design</li>
+      <li><span class="check">✓</span> Kontaktbereich</li>
+      <li><span class="check">✓</span> Basis-SEO</li>
+      <li><span class="check">✓</span> Einrichtung auf GitHub Pages möglich</li>
+    </ul>
+    <a href="#" class="btn btn-ghost" onclick="navigate('kontakt');return false;">Starter anfragen</a>
+  </div>
 
-   <!-- Business (featured) -->
-   <div class="price-card featured reveal reveal-delay-1">
-     <div class="popular-badge">⭐ Beliebt</div>
-     <h3>Business</h3>
-     <p>Für Unternehmen, die Leistungen, Referenzen und Kontaktwege ausführlicher darstellen möchten.</p>
-     <div class="price-num">899 <span class="price-unit">€ einmalig</span></div>
-     <ul class="price-list">
-       <li><span class="check">✓</span> Startseite plus bis zu 4 Unterseiten</li>
-       <li><span class="check">✓</span> Individuelles Layout nach Branche</li>
-       <li><span class="check">✓</span> Referenz- oder Leistungsbereich</li>
-       <li><span class="check">✓</span> Kontaktformular-Vorbereitung</li>
-       <li><span class="check">✓</span> Technische Veröffentlichung</li>
-     </ul>
-     <a href="#" class="btn" onclick="navigate('kontakt');return false;">Business anfragen</a>
-   </div>
+  <!-- Business (featured) -->
+  <div class="price-card featured reveal reveal-delay-1">
+    <div class="popular-badge">⭐ Beliebt</div>
+    <h3>Business</h3>
+    <p>Für Unternehmen, die Leistungen, Referenzen und Kontaktwege ausführlicher darstellen möchten.</p>
+    <div class="price-num">899 <span class="price-unit">€ einmalig</span></div>
+    <ul class="price-list">
+      <li><span class="check">✓</span> Startseite plus bis zu 4 Unterseiten</li>
+      <li><span class="check">✓</span> Individuelles Layout nach Branche</li>
+      <li><span class="check">✓</span> Referenz- oder Leistungsbereich</li>
+      <li><span class="check">✓</span> Kontaktformular-Vorbereitung</li>
+      <li><span class="check">✓</span> Technische Veröffentlichung</li>
+    </ul>
+    <a href="#" class="btn" onclick="navigate('kontakt');return false;">Business anfragen</a>
+  </div>
 
-   <!-- Premium -->
-   <div class="price-card reveal reveal-delay-2">
-     <h3>Premium</h3>
-     <p>Für einen besonders hochwertigen Auftritt mit stärkerer visueller Ausarbeitung.</p>
-     <div class="price-num">1.499 <span class="price-unit">€ ab</span></div>
-     <ul class="price-list">
-       <li><span class="check">✓</span> Mehrseitige Website mit Premium-Look</li>
-       <li><span class="check">✓</span> Individuelle Abschnitte und Animationen</li>
-       <li><span class="check">✓</span> Erweiterte Inhaltsstruktur</li>
-       <li><span class="check">✓</span> Feinschliff für Smartphone & Desktop</li>
-       <li><span class="check">✓</span> Optionale Wartung und Betreuung</li>
-     </ul>
-     <a href="#" class="btn btn-ghost" onclick="navigate('kontakt');return false;">Premium anfragen</a>
-   </div>
- </div>
+  <!-- Premium -->
+  <div class="price-card reveal reveal-delay-2">
+    <h3>Premium</h3>
+    <p>Für einen besonders hochwertigen Auftritt mit stärkerer visueller Ausarbeitung.</p>
+    <div class="price-num">1.499 <span class="price-unit">€ ab</span></div>
+    <ul class="price-list">
+      <li><span class="check">✓</span> Mehrseitige Website mit Premium-Look</li>
+      <li><span class="check">✓</span> Individuelle Abschnitte und Animationen</li>
+      <li><span class="check">✓</span> Erweiterte Inhaltsstruktur</li>
+      <li><span class="check">✓</span> Feinschliff für Smartphone & Desktop</li>
+      <li><span class="check">✓</span> Optionale Wartung und Betreuung</li>
+    </ul>
+    <a href="#" class="btn btn-ghost" onclick="navigate('kontakt');return false;">Premium anfragen</a>
+  </div>
+</div>
 
- <div class="pricing-note-box reveal">
-   <div>
-     <strong>Transparenter Leistungsumfang</strong>
-     <p>In der Leistungsbeschreibung ist festgehalten, welche Leistungen in den Website-Paketen enthalten sind, welche Mitwirkungspflichten bestehen und welche Leistungen separat vereinbart werden.</p>
-   </div>
-   <a href="./leistungsbeschreibung.html" class="tlink">Leistungsbeschreibung öffnen →</a>
- </div>
+<div class="pricing-note-box reveal">
+  <div>
+    <strong>Transparenter Leistungsumfang</strong>
+    <p>In der Leistungsbeschreibung ist festgehalten, welche Leistungen in den Website-Paketen enthalten sind, welche Mitwirkungspflichten bestehen und welche Leistungen separat vereinbart werden.</p>
+  </div>
+  <a href="./leistungsbeschreibung.html" class="tlink">Leistungsbeschreibung öffnen →</a>
+</div>
 </div>
 
 <!-- Wartung -->
 <section class="maint-section">
- <div class="shell">
-   <div class="kicker reveal">Wartung & Änderungen</div>
-   <h2 class="reveal">Deine Website bleibt <span class="accent">flexibel.</span></h2>
-   <p class="reveal" style="color:var(--muted);max-width:580px;margin-top:12px">Nach dem Onlinegang kannst du selbst entscheiden, wie Änderungen abgerechnet werden – einzeln oder als monatliches Paket.</p>
+<div class="shell">
+  <div class="kicker reveal">Wartung & Änderungen</div>
+  <h2 class="reveal">Deine Website bleibt <span class="accent">flexibel.</span></h2>
+  <p class="reveal" style="color:var(--muted);max-width:580px;margin-top:12px">Nach dem Onlinegang kannst du selbst entscheiden, wie Änderungen abgerechnet werden – einzeln oder als monatliches Paket.</p>
 
-   <div class="maint-grid">
-     <!-- Simple -->
-     <div class="maint-card reveal">
-       <div class="maint-badge">Simple</div>
-       <h3>Für seltene Änderungen</h3>
-       <p>Ideal, wenn deine Website grundsätzlich stabil bleibt und nur gelegentlich kleinere Anpassungen notwendig sind.</p>
-       <div class="maint-price">0 <span class="price-unit">€ / Monat</span></div>
-       <ul class="maint-list">
-         <li><span class="check">✓</span> Kleine Änderung: 5 €</li>
-         <li><span class="check">✓</span> Mittlere Änderung: 20 €</li>
-         <li><span class="check">✓</span> Große Änderung: 50 €</li>
-         <li><span class="check">✓</span> Keine monatliche Grundgebühr</li>
-         <li><span class="check">✓</span> Abrechnung nur bei Bedarf</li>
-       </ul>
-       <a href="#" class="btn btn-ghost" onclick="navigate('kontakt');return false;">Simple anfragen</a>
-     </div>
+  <div class="maint-grid">
+    <!-- Simple -->
+    <div class="maint-card reveal">
+      <div class="maint-badge">Simple</div>
+      <h3>Für seltene Änderungen</h3>
+      <p>Ideal, wenn deine Website grundsätzlich stabil bleibt und nur gelegentlich kleinere Anpassungen notwendig sind.</p>
+      <div class="maint-price">0 <span class="price-unit">€ / Monat</span></div>
+      <ul class="maint-list">
+        <li><span class="check">✓</span> Kleine Änderung: 5 €</li>
+        <li><span class="check">✓</span> Mittlere Änderung: 20 €</li>
+        <li><span class="check">✓</span> Große Änderung: 50 €</li>
+        <li><span class="check">✓</span> Keine monatliche Grundgebühr</li>
+        <li><span class="check">✓</span> Abrechnung nur bei Bedarf</li>
+      </ul>
+      <a href="#" class="btn btn-ghost" onclick="navigate('kontakt');return false;">Simple anfragen</a>
+    </div>
 
-     <!-- Plus (featured) -->
-     <div class="maint-card featured reveal reveal-delay-1">
-       <div class="maint-badge">Plus</div>
-       <span style="position:absolute;top:18px;right:18px;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.18);color:white;font-size:12px;font-weight:800">Beliebt</span>
-       <h3>Für regelmäßige Pflege</h3>
-       <p>Perfekt, wenn du laufend Texte, Bilder, Öffnungszeiten oder kleinere Bereiche aktualisieren möchtest.</p>
-       <div class="maint-price">9,99 <span class="price-unit">€ / Monat</span></div>
-       <ul class="maint-list">
-         <li><span class="check">✓</span> Kleine Änderungen jederzeit inklusive</li>
-         <li><span class="check">✓</span> Mittlere Änderungen jederzeit inklusive</li>
-         <li><span class="check">✓</span> Ideal für Texte, Bilder und Inhalte</li>
-         <li><span class="check">✓</span> Planbare monatliche Kosten</li>
-         <li><span class="check">✓</span> Gute Wahl für aktive Websites</li>
-       </ul>
-       <a href="#" class="btn" style="background:rgba(255,255,255,.18);color:white;border:1px solid rgba(255,255,255,.25)" onclick="navigate('kontakt');return false;">Plus anfragen</a>
-     </div>
+    <!-- Plus (featured) -->
+    <div class="maint-card featured reveal reveal-delay-1">
+      <div class="maint-badge">Plus</div>
+      <span style="position:absolute;top:18px;right:18px;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.18);color:white;font-size:12px;font-weight:800">Beliebt</span>
+      <h3>Für regelmäßige Pflege</h3>
+      <p>Perfekt, wenn du laufend Texte, Bilder, Öffnungszeiten oder kleinere Bereiche aktualisieren möchtest.</p>
+      <div class="maint-price">9,99 <span class="price-unit">€ / Monat</span></div>
+      <ul class="maint-list">
+        <li><span class="check">✓</span> Kleine Änderungen jederzeit inklusive</li>
+        <li><span class="check">✓</span> Mittlere Änderungen jederzeit inklusive</li>
+        <li><span class="check">✓</span> Ideal für Texte, Bilder und Inhalte</li>
+        <li><span class="check">✓</span> Planbare monatliche Kosten</li>
+        <li><span class="check">✓</span> Gute Wahl für aktive Websites</li>
+      </ul>
+      <a href="#" class="btn" style="background:rgba(255,255,255,.18);color:white;border:1px solid rgba(255,255,255,.25)" onclick="navigate('kontakt');return false;">Plus anfragen</a>
+    </div>
 
-     <!-- Pro -->
-     <div class="maint-card reveal reveal-delay-2">
-       <div class="maint-badge">Pro</div>
-       <h3>Für maximale Flexibilität</h3>
-       <p>Für Unternehmen, die ihre Website regelmäßig weiterentwickeln und auch größere Anpassungen flexibel umsetzen möchten.</p>
-       <div class="maint-price">14,99 <span class="price-unit">€ / Monat</span></div>
-       <ul class="maint-list">
-         <li><span class="check">✓</span> Kleine Änderungen jederzeit inklusive</li>
-         <li><span class="check">✓</span> Mittlere Änderungen jederzeit inklusive</li>
-         <li><span class="check">✓</span> Große Änderungen jederzeit inklusive</li>
-         <li><span class="check">✓</span> Beste Wahl für wachsende Websites</li>
-         <li><span class="check">✓</span> Mehr Freiheit bei Anpassungen</li>
-       </ul>
-       <a href="#" class="btn btn-ghost" onclick="navigate('kontakt');return false;">Pro anfragen</a>
-     </div>
-   </div>
+    <!-- Pro -->
+    <div class="maint-card reveal reveal-delay-2">
+      <div class="maint-badge">Pro</div>
+      <h3>Für maximale Flexibilität</h3>
+      <p>Für Unternehmen, die ihre Website regelmäßig weiterentwickeln und auch größere Anpassungen flexibel umsetzen möchten.</p>
+      <div class="maint-price">14,99 <span class="price-unit">€ / Monat</span></div>
+      <ul class="maint-list">
+        <li><span class="check">✓</span> Kleine Änderungen jederzeit inklusive</li>
+        <li><span class="check">✓</span> Mittlere Änderungen jederzeit inklusive</li>
+        <li><span class="check">✓</span> Große Änderungen jederzeit inklusive</li>
+        <li><span class="check">✓</span> Beste Wahl für wachsende Websites</li>
+        <li><span class="check">✓</span> Mehr Freiheit bei Anpassungen</li>
+      </ul>
+      <a href="#" class="btn btn-ghost" onclick="navigate('kontakt');return false;">Pro anfragen</a>
+    </div>
+  </div>
 
-   <div class="maint-note reveal">
-     Hinweis: Die Einordnung in kleine, mittlere oder große Änderungen richtet sich nach dem tatsächlichen Aufwand. Neue Unterseiten, Funktionen oder komplette Designwechsel können individuell angeboten werden.
-   </div>
+  <div class="maint-note reveal">
+    Hinweis: Die Einordnung in kleine, mittlere oder große Änderungen richtet sich nach dem tatsächlichen Aufwand. Neue Unterseiten, Funktionen oder komplette Designwechsel können individuell angeboten werden.
+  </div>
 
-   <div class="maint-legal reveal">
-     <div>
-       <strong>Transparente Wartungsbedingungen</strong>
-       <p>In der Leistungsbeschreibung der Wartungspakete ist festgehalten, welche Änderungen enthalten sind und wie kleine, mittlere und große Anpassungen eingeordnet werden.</p>
-     </div>
-     <a href="./wartung-leistungsbeschreibung.html" class="tlink">Wartungsbeschreibung öffnen →</a>
-   </div>
- </div>
+  <div class="maint-legal reveal">
+    <div>
+      <strong>Transparente Wartungsbedingungen</strong>
+      <p>In der Leistungsbeschreibung der Wartungspakete ist festgehalten, welche Änderungen enthalten sind und wie kleine, mittlere und große Anpassungen eingeordnet werden.</p>
+    </div>
+    <a href="./wartung-leistungsbeschreibung.html" class="tlink">Wartungsbeschreibung öffnen →</a>
+  </div>
+</div>
 </section>
 `; }
 
 /* ══════════════════════════════════════════════
-  ÜBER MICH
+ ÜBER MICH
 ══════════════════════════════════════════════ */
 function ueber() { return `
 <div class="shell">
- <div class="page-hero reveal">
-   <div class="kicker">Über mich</div>
-   <h1>Direkter Kontakt statt <span class="accent">anonymer Agenturprozess.</span></h1>
-   <p>Webdesign ist Vertrauenssache – deshalb hast du bei Webdesign-Elbe immer einen persönlichen Ansprechpartner.</p>
- </div>
+<div class="page-hero reveal">
+  <div class="kicker">Über mich</div>
+  <h1>Direkter Kontakt statt <span class="accent">anonymer Agenturprozess.</span></h1>
+  <p>Webdesign ist Vertrauenssache – deshalb hast du bei Webdesign-Elbe immer einen persönlichen Ansprechpartner.</p>
+</div>
 
- <div class="about-grid">
-   <div class="about-img reveal">
-     <img 
- src="./assets/foto.JPG" 
- alt="Profilbild von Webdesign-Elbe"
- loading="lazy" 
+<div class="about-grid">
+  <div class="about-img reveal">
+    <img 
+src="./assets/foto.JPG" 
+alt="Profilbild von Webdesign-Elbe"
+loading="lazy" 
 />
-   </div>
-   <div class="about-content reveal reveal-delay-1">
-     <div class="kicker">Persönliche Betreuung</div>
-     <h2>Ich begleite dein Projekt von Anfang bis Ende.</h2>
-     <p style="margin-top:16px">
-       Webdesign ist Vertrauenssache. Deshalb hast du bei Webdesign-Elbe keinen anonymen Agenturprozess,
-       sondern einen direkten Ansprechpartner für Planung, Gestaltung und Umsetzung.
-     </p>
-     <p>
-       Ich begleite dein Projekt persönlich – von der ersten Idee bis zur fertigen Website.
-       Dabei geht es nicht darum, möglichst kompliziert zu wirken, sondern eine moderne Website zu erstellen,
-       die zu deinem Unternehmen passt und für deine Kunden verständlich ist.
-     </p>
-     <p>
-       Der Fokus liegt auf kleinen und mittelgroßen Unternehmen, Dienstleistern und lokalen Betrieben –
-       Menschen, die eine professionelle Online-Präsenz brauchen, ohne ein großes Agenturbudget.
-     </p>
+  </div>
+  <div class="about-content reveal reveal-delay-1">
+    <div class="kicker">Persönliche Betreuung</div>
+    <h2>Ich begleite dein Projekt von Anfang bis Ende.</h2>
+    <p style="margin-top:16px">
+      Webdesign ist Vertrauenssache. Deshalb hast du bei Webdesign-Elbe keinen anonymen Agenturprozess,
+      sondern einen direkten Ansprechpartner für Planung, Gestaltung und Umsetzung.
+    </p>
+    <p>
+      Ich begleite dein Projekt persönlich – von der ersten Idee bis zur fertigen Website.
+      Dabei geht es nicht darum, möglichst kompliziert zu wirken, sondern eine moderne Website zu erstellen,
+      die zu deinem Unternehmen passt und für deine Kunden verständlich ist.
+    </p>
+    <p>
+      Der Fokus liegt auf kleinen und mittelgroßen Unternehmen, Dienstleistern und lokalen Betrieben –
+      Menschen, die eine professionelle Online-Präsenz brauchen, ohne ein großes Agenturbudget.
+    </p>
 
-     <div class="about-facts">
-       <div class="about-fact">
-         <strong>Direkter Ansprechpartner</strong>
-         <span>Kurze Wege und persönliche Abstimmung.</span>
-       </div>
-       <div class="about-fact">
-         <strong>Verständliche Umsetzung</strong>
-         <span>Ohne Technik-Chaos und unnötige Komplexität.</span>
-       </div>
-       <div class="about-fact">
-         <strong>Fokus auf KMU</strong>
-         <span>Websites für kleine Unternehmen und lokale Dienstleister.</span>
-       </div>
-     </div>
-   </div>
- </div>
+    <div class="about-facts">
+      <div class="about-fact">
+        <strong>Direkter Ansprechpartner</strong>
+        <span>Kurze Wege und persönliche Abstimmung.</span>
+      </div>
+      <div class="about-fact">
+        <strong>Verständliche Umsetzung</strong>
+        <span>Ohne Technik-Chaos und unnötige Komplexität.</span>
+      </div>
+      <div class="about-fact">
+        <strong>Fokus auf KMU</strong>
+        <span>Websites für kleine Unternehmen und lokale Dienstleister.</span>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <!-- Values -->
 <section class="values-section" style="margin-top:0">
- <div class="shell">
-   <div class="kicker reveal">Meine Werte</div>
-   <h2 class="reveal">Was meine Arbeit ausmacht.</h2>
-   <div class="values-grid" style="margin-top:36px">
-     <div class="value-card reveal">
-       <div class="value-icon">🎯</div>
-       <h3>Klarheit</h3>
-       <p>Keine unnötige Komplexität. Klare Strukturen, verständliche Texte und ein ehrliches Angebot.</p>
-     </div>
-     <div class="value-card reveal reveal-delay-1">
-       <div class="value-icon">🤝</div>
-       <h3>Persönlichkeit</h3>
-       <p>Du arbeitest direkt mit mir – keine Weiterleitungen, kein anonymes Agentur-Gefühl.</p>
-     </div>
-     <div class="value-card reveal reveal-delay-2">
-       <div class="value-icon">⚡</div>
-       <h3>Qualität</h3>
-       <p>Jedes Projekt wird sorgfältig umgesetzt – sauber im Code, stark im Erscheinungsbild.</p>
-     </div>
-     <div class="value-card reveal reveal-delay-3">
-       <div class="value-icon">🌱</div>
-       <h3>Fairness</h3>
-       <p>Transparente Preise, ehrliche Zeitplanung und keine versteckten Kosten.</p>
-     </div>
-   </div>
- </div>
+<div class="shell">
+  <div class="kicker reveal">Meine Werte</div>
+  <h2 class="reveal">Was meine Arbeit ausmacht.</h2>
+  <div class="values-grid" style="margin-top:36px">
+    <div class="value-card reveal">
+      <div class="value-icon">🎯</div>
+      <h3>Klarheit</h3>
+      <p>Keine unnötige Komplexität. Klare Strukturen, verständliche Texte und ein ehrliches Angebot.</p>
+    </div>
+    <div class="value-card reveal reveal-delay-1">
+      <div class="value-icon">🤝</div>
+      <h3>Persönlichkeit</h3>
+      <p>Du arbeitest direkt mit mir – keine Weiterleitungen, kein anonymes Agentur-Gefühl.</p>
+    </div>
+    <div class="value-card reveal reveal-delay-2">
+      <div class="value-icon">⚡</div>
+      <h3>Qualität</h3>
+      <p>Jedes Projekt wird sorgfältig umgesetzt – sauber im Code, stark im Erscheinungsbild.</p>
+    </div>
+    <div class="value-card reveal reveal-delay-3">
+      <div class="value-icon">🌱</div>
+      <h3>Fairness</h3>
+      <p>Transparente Preise, ehrliche Zeitplanung und keine versteckten Kosten.</p>
+    </div>
+  </div>
+</div>
 </section>
 
 <div class="shell">
- <div class="cta-box reveal" style="margin-bottom:20px">
-   <h2>Klingt gut – dann lass uns reden.</h2>
-   <p>Beschreibe kurz dein Vorhaben und ich melde mich in der Regel innerhalb von 24 Stunden.</p>
-   <div class="cta-actions">
-     <a href="#" class="btn btn-primary" onclick="navigate('kontakt');return false;">Jetzt Kontakt aufnehmen</a>
-     <a href="#" class="btn btn-ghost" onclick="navigate('referenzen');return false;">Referenzen ansehen</a>
-   </div>
- </div>
+<div class="cta-box reveal" style="margin-bottom:20px">
+  <h2>Klingt gut – dann lass uns reden.</h2>
+  <p>Beschreibe kurz dein Vorhaben und ich melde mich in der Regel innerhalb von 24 Stunden.</p>
+  <div class="cta-actions">
+    <a href="#" class="btn btn-primary" onclick="navigate('kontakt');return false;">Jetzt Kontakt aufnehmen</a>
+    <a href="#" class="btn btn-ghost" onclick="navigate('referenzen');return false;">Referenzen ansehen</a>
+  </div>
+</div>
 </div>
 `; }
 
 /* ══════════════════════════════════════════════
-  KONTAKT
+ KONTAKT
 ══════════════════════════════════════════════ */
 function kontakt() { return `
 <div class="shell">
- <div class="page-hero reveal">
-   <div class="kicker">Kontakt</div>
-   <h1>Lass uns deine Website <span class="accent">planen.</span></h1>
-   <p>Beschreibe kurz, was du brauchst – danach wird eine erste unverbindliche Rückmeldung erstellt.</p>
- </div>
+<div class="page-hero reveal">
+  <div class="kicker">Kontakt</div>
+  <h1>Lass uns deine Website <span class="accent">planen.</span></h1>
+  <p>Beschreibe kurz, was du brauchst – danach wird eine erste unverbindliche Rückmeldung erstellt.</p>
+</div>
 
- <div class="contact-grid">
-   <!-- Info -->
-   <div class="contact-info reveal">
-     <h3>Webdesign-Elbe</h3>
-     <p>Moderne Websites für kleine Unternehmen, Dienstleister und lokale Marken entlang der Elbe.</p>
+<div class="contact-grid">
+  <!-- Info -->
+  <div class="contact-info reveal">
+    <h3>Webdesign-Elbe</h3>
+    <p>Moderne Websites für kleine Unternehmen, Dienstleister und lokale Marken entlang der Elbe.</p>
 
-     <div class="contact-items">
-       <div class="contact-item">
-         <div class="contact-ico">📩</div>
-         <div>
-           <strong>E-Mail</strong>
-           <span><a href="mailto:kontakt@webdesign-elbe.de" style="color:var(--navy)">kontakt@webdesign-elbe.de</a></span>
-         </div>
-       </div>
-       <div class="contact-item">
-         <div class="contact-ico">📍</div>
-         <div>
-           <strong>Region</strong>
-           <span>Flexibel durch Online-Meetings in Teams und Co.</span>
-         </div>
-       </div>
-       <div class="contact-item">
-         <div class="contact-ico">🕒</div>
-         <div>
-           <strong>Antwortzeit</strong>
-           <span>In der Regel innerhalb von 24 Stunden</span>
-         </div>
-       </div>
-     </div>
+    <div class="contact-items">
+      <div class="contact-item">
+        <div class="contact-ico">📩</div>
+        <div>
+          <strong>E-Mail</strong>
+          <span><a href="mailto:kontakt@webdesign-elbe.de" style="color:var(--navy)">kontakt@webdesign-elbe.de</a></span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-ico">📍</div>
+        <div>
+          <strong>Region</strong>
+          <span>Flexibel durch Online-Meetings in Teams und Co.</span>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-ico">🕒</div>
+        <div>
+          <strong>Antwortzeit</strong>
+          <span>In der Regel innerhalb von 24 Stunden</span>
+        </div>
+      </div>
+    </div>
 
-     <div class="legal-cards" style="margin-top:28px">
-       <div class="legal-card">
-         <h4>Impressum</h4>
-         <p>Alle rechtlichen Angaben zu Anbieter, Kontakt und Verantwortlichkeit.</p>
-         <a href="./impressum.html" class="tlink">Impressum öffnen →</a>
-       </div>
-       <div class="legal-card">
-         <h4>Datenschutz</h4>
-         <p>Alle Hinweise zur Verarbeitung personenbezogener Daten.</p>
-         <a href="./datenschutz.html" class="tlink">Datenschutz öffnen →</a>
-       </div>
-     </div>
-   </div>
+    <div class="legal-cards" style="margin-top:28px">
+      <div class="legal-card">
+        <h4>Impressum</h4>
+        <p>Alle rechtlichen Angaben zu Anbieter, Kontakt und Verantwortlichkeit.</p>
+        <a href="./impressum.html" class="tlink">Impressum öffnen →</a>
+      </div>
+      <div class="legal-card">
+        <h4>Datenschutz</h4>
+        <p>Alle Hinweise zur Verarbeitung personenbezogener Daten.</p>
+        <a href="./datenschutz.html" class="tlink">Datenschutz öffnen →</a>
+      </div>
+    </div>
+  </div>
 
-   <!-- Form -->
-   <div class="contact-form-card reveal reveal-delay-1">
-     <form id="anfrage" action="https://formspree.io/f/mykvqgkw" method="POST">
-       <input type="hidden" name="_subject" value="Neue Anfrage über Webdesign-Elbe" />
-       <input type="hidden" name="_language" value="de" />
-       <input type="hidden" name="_next" value="https://rzh9bctk2n-hash.github.io/Webdesign-Elbe-Hosting-Seite-/danke.html" />
+  <!-- Form -->
+  <div class="contact-form-card reveal reveal-delay-1">
+    <form id="anfrage" action="https://formspree.io/f/mykvqgkw" method="POST">
+      <input type="hidden" name="_subject" value="Neue Anfrage über Webdesign-Elbe" />
+      <input type="hidden" name="_language" value="de" />
+      <input type="hidden" name="_next" value="https://rzh9bctk2n-hash.github.io/Webdesign-Elbe-Hosting-Seite-/danke.html" />
 
-       <div class="form-grid">
-         <label class="form-label">
-           Name
-           <input class="form-input" type="text" name="name" placeholder="Max Mustermann" required />
-         </label>
-         <label class="form-label">
-           Unternehmen / Projekt
-           <input class="form-input" type="text" name="project" placeholder="z. B. Café, Praxis, Handwerksbetrieb" />
-         </label>
-         <label class="form-label">
-           E-Mail
-           <input class="form-input" type="email" name="email" placeholder="mail@beispiel.de" required />
-         </label>
-         <label class="form-label">
-           Telefon
-           <input class="form-input" type="tel" name="phone" placeholder="Optional für Rückfragen" />
-         </label>
-         <label class="form-label">
-           Was brauchst du?
-           <select class="form-select" name="request_type">
-             <option>Neue Website</option>
-             <option>Überarbeitung einer bestehenden Website</option>
-             <option>Landingpage / Onepager</option>
-             <option>Wartung oder Änderung</option>
-             <option>Noch unsicher</option>
-           </select>
-         </label>
-         <label class="form-label">
-           Website-Paket
-           <select class="form-select" name="website_package">
-             <option>Noch unsicher</option>
-             <option>Starter – ab 499 €</option>
-             <option>Business – 899 €</option>
-             <option>Premium – ab 1.499 €</option>
-             <option>Individuelle Lösung</option>
-             <option>Kein Website-Paket benötigt</option>
-           </select>
-         </label>
-         <label class="form-label">
-           Wartungspaket
-           <select class="form-select" name="maintenance_package">
-             <option>Noch unsicher</option>
-             <option>Simple – 0 € / Monat</option>
-             <option>Plus – 9,99 € / Monat</option>
-             <option>Pro – 14,99 € / Monat</option>
-             <option>Individuelle Wartungslösung</option>
-             <option>Keine Wartung gewünscht</option>
-           </select>
-         </label>
-         <label class="form-label">
-           Bestehende Website
-           <input class="form-input" type="text" name="current_website" placeholder="Falls vorhanden: www.beispiel.de" />
-         </label>
-         <label class="form-label form-full">
-           Nachricht
-           <textarea class="form-textarea" name="message" required placeholder="Beschreibe kurz dein Vorhaben: Was soll die Website können, welche Inhalte gibt es schon und welcher Stil gefällt dir?"></textarea>
-         </label>
-         <p class="form-note form-full">
-           Deine Angaben helfen dabei, das passende Modell einzuschätzen. Du erhältst anschließend eine unverbindliche Rückmeldung.
-         </p>
-         <div class="form-full">
-           <button class="btn btn-primary form-submit" type="submit">
-             Anfrage senden
-             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-           </button>
-         </div>
-       </div>
-     </form>
-   </div>
- </div>
+      <div class="form-grid">
+        <label class="form-label">
+          Name
+          <input class="form-input" type="text" name="name" placeholder="Max Mustermann" required />
+        </label>
+        <label class="form-label">
+          Unternehmen / Projekt
+          <input class="form-input" type="text" name="project" placeholder="z. B. Café, Praxis, Handwerksbetrieb" />
+        </label>
+        <label class="form-label">
+          E-Mail
+          <input class="form-input" type="email" name="email" placeholder="mail@beispiel.de" required />
+        </label>
+        <label class="form-label">
+          Telefon
+          <input class="form-input" type="tel" name="phone" placeholder="Optional für Rückfragen" />
+        </label>
+        <label class="form-label">
+          Was brauchst du?
+          <select class="form-select" name="request_type">
+            <option>Neue Website</option>
+            <option>Überarbeitung einer bestehenden Website</option>
+            <option>Landingpage / Onepager</option>
+            <option>Wartung oder Änderung</option>
+            <option>Noch unsicher</option>
+          </select>
+        </label>
+        <label class="form-label">
+          Website-Paket
+          <select class="form-select" name="website_package">
+            <option>Noch unsicher</option>
+            <option>Starter – ab 499 €</option>
+            <option>Business – 899 €</option>
+            <option>Premium – ab 1.499 €</option>
+            <option>Individuelle Lösung</option>
+            <option>Kein Website-Paket benötigt</option>
+          </select>
+        </label>
+        <label class="form-label">
+          Wartungspaket
+          <select class="form-select" name="maintenance_package">
+            <option>Noch unsicher</option>
+            <option>Simple – 0 € / Monat</option>
+            <option>Plus – 9,99 € / Monat</option>
+            <option>Pro – 14,99 € / Monat</option>
+            <option>Individuelle Wartungslösung</option>
+            <option>Keine Wartung gewünscht</option>
+          </select>
+        </label>
+        <label class="form-label">
+          Bestehende Website
+          <input class="form-input" type="text" name="current_website" placeholder="Falls vorhanden: www.beispiel.de" />
+        </label>
+        <label class="form-label form-full">
+          Nachricht
+          <textarea class="form-textarea" name="message" required placeholder="Beschreibe kurz dein Vorhaben: Was soll die Website können, welche Inhalte gibt es schon und welcher Stil gefällt dir?"></textarea>
+        </label>
+        <p class="form-note form-full">
+          Deine Angaben helfen dabei, das passende Modell einzuschätzen. Du erhältst anschließend eine unverbindliche Rückmeldung.
+        </p>
+        <div class="form-full">
+          <button class="btn btn-primary form-submit" type="submit">
+            Anfrage senden
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 </div>
 `; }
 
 /* ══════════════════════════════════════════════
-  INIT
+ INIT
 ══════════════════════════════════════════════ */
 (function init() {
 const hash = location.hash.replace('#','') || 'home';
